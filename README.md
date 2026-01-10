@@ -1,0 +1,42 @@
+# DeveloperSSS - Developer Roadmap & Resource Library 🚀
+
+A modern, open-source, community-driven guide for developers. This project provides roadmaps, resources, and career advice for beginners and those looking to upskill in software development.
+
+## 🛠 Tech Stack
+
+*   **HTML5 & CSS3**
+*   **JavaScript (ES6+)**
+*   **Tailwind CSS** (Styling)
+*   **Vite** (Build Tool)
+
+## 🏃‍♂️ Run Locally
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/YOUR_USERNAME/DeveloperSSS.git
+    cd DeveloperSSS
+    ```
+
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+    Open `http://localhost:5173` in your browser.
+
+## 🤝 Contributing
+
+This project is open-source and grows with community contributions! If you want to add a new resource, fix a bug, or suggest a new roadmap, please read the **[CONTRIBUTING.md](CONTRIBUTING.md)** file.
+
+### Basic Rules
+1.  Never commit directly to the `main` branch.
+2.  Submit your changes via a **Pull Request (PR)**.
+3.  Be respectful and constructive.
+
+## 📄 License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
