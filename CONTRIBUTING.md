@@ -12,7 +12,7 @@ Click the **"Fork"** button at the top right of the GitHub page to copy the proj
 
 ### 2. Clone to Your Machine
 ```bash
-git clone https://github.com/YOUR_USERNAME/DeveloperSSS.git
+git clone https://github.com/TunarJamalov/DeveloperSSS.git
 cd DeveloperSSS
 ```
 

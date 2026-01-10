@@ -13,7 +13,7 @@ A modern, open-source, community-driven guide for developers. This project provi
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/YOUR_USERNAME/DeveloperSSS.git
+    git clone https://github.com/TunarJamalov/DeveloperSSS.git
     cd DeveloperSSS
     ```
 
