@@ -16,36 +16,48 @@ export const ui = {
         heroTitle: "What do you want to learn today?",
         heroSubtitle: "Your ultimate guide to the tech world.",
         searchPlaceholder: "Search for Python, Cyber Security, Jobs...",
-        tabs: { roadmap: "Roadmap", resources: "Resources", jobs: "Jobs", faq: "FAQ" },
+        tabs: { roadmap: "Roadmap", resources: "Resources", jobs: "Jobs", faq: "FAQ", interview: "Interview Prep", projects: "Projects" },
         comingSoon: "Content coming soon...",
         globalFaq: "Global FAQ",
         globalResources: "Global Resources",
         faqTitle: "Frequently Asked Questions",
-        faqSubtitle: "Common questions about software development and security."
+        faqSubtitle: "Common questions about software development and security.",
+        hallOfFame: "Hall of Fame",
+        glossary: "Dev Glossary",
+        toolOfTheWeek: "Tool of the Week",
+        viewTool: "View Tool"
     },
     tr: {
         welcome: "Hoş Geldiniz",
         heroTitle: "Bugün ne öğrenmek istiyorsun?",
         heroSubtitle: "Teknoloji dünyasındaki nihai rehberiniz.",
         searchPlaceholder: "Örn: Python, Siber Güvenlik...",
-        tabs: { roadmap: "Yol Haritası", resources: "Kaynaklar", jobs: "İş İlanları", faq: "SSS" },
+        tabs: { roadmap: "Yol Haritası", resources: "Kaynaklar", jobs: "İş İlanları", faq: "SSS", interview: "Mülakat Hazırlık", projects: "Proje Fikirleri" },
         comingSoon: "İçerik yakında eklenecek...",
         globalFaq: "Genel SSS",
         globalResources: "Genel Kaynaklar",
         faqTitle: "Sıkça Sorulan Sorular",
-        faqSubtitle: "Yazılım dünyası ve güvenlik hakkında genel sorular."
+        faqSubtitle: "Yazılım dünyası ve güvenlik hakkında genel sorular.",
+        hallOfFame: "Onur Listesi",
+        glossary: "Yazılım Sözlüğü",
+        toolOfTheWeek: "Haftanın Aracı",
+        viewTool: "Aracı İncele"
     },
     az: {
         welcome: "Xoş Gəlmisiniz",
         heroTitle: "Bu gün nə öyrənmək istəyirsən?",
         heroSubtitle: "Texnologiya dünyasında əsas bələdçiniz.",
         searchPlaceholder: "Məsələn: Python, Kiber Təhlükəsizlik...",
-        tabs: { roadmap: "Yol Xəritəsi", resources: "Resurslar", jobs: "İş Elanları", faq: "Suallar" },
+        tabs: { roadmap: "Yol Xəritəsi", resources: "Resurslar", jobs: "İş Elanları", faq: "Suallar", interview: "Müsahibə Hazırlığı", projects: "Layihə Fikirləri" },
         comingSoon: "Məzmun tezliklə əlavə olunacaq...",
         globalFaq: "Ümumi SSS",
         globalResources: "Ümumi Resurslar",
         faqTitle: "Tez-tez Verilən Suallar",
-        faqSubtitle: "Proqramlaşdırma və təhlükəsizlik haqqında ümumi suallar."
+        faqSubtitle: "Proqramlaşdırma və təhlükəsizlik haqqında ümumi suallar.",
+        hallOfFame: "Onur Siyahısı",
+        glossary: "Terminlər Sözlüyü",
+        toolOfTheWeek: "Həftənin Aləti",
+        viewTool: "Alətə Bax"
     }
 };
 
@@ -84,6 +96,7 @@ export const categories = [
             { id: 'data-science', title: { en: 'Data Science', tr: 'Veri Bilimi', az: 'Data Science' } },
             { id: 'ml', title: { en: 'Machine Learning', tr: 'Makine Öğrenmesi', az: 'Maşın Öyrənməsi' } },
             { id: 'deep-learning', title: { en: 'Deep Learning & AI', tr: 'Derin Öğrenme & AI', az: 'Dərin Öyrənmə & AI' } },
+            { id: 'ai-engineering', title: { en: 'AI Engineering', tr: 'AI Mühendisliği', az: 'AI Mühəndisliyi' } },
             { id: 'big-data', title: { en: 'Big Data', tr: 'Büyük Veri', az: 'Big Data' } }
         ]
     },
@@ -1670,6 +1683,296 @@ contentData['frontend'] = {
                 en: "Absolutely yes! 80% of modern job postings now require TypeScript instead of plain JavaScript."
             }
         }
+    ],
+    interview: [
+        {
+            id: 1,
+            q: {
+                tr: "DOM (Document Object Model) ve Virtual DOM farkı nedir?",
+                az: "DOM və Virtual DOM arasındakı fərq nədir?",
+                en: "Difference between Real DOM and Virtual DOM?"
+            },
+            a: {
+                tr: "Gerçek DOM yavaştır, her değişiklikte tüm ağacı günceller. Virtual DOM (React vb.) bellekteki hafif bir kopyadır; sadece değişen kısımları tespit eder (Diffing) ve sadece orayı günceller (Reconciliation).",
+                az: "Həqiqi DOM yavaşdır, hər dəyişiklikdə bütün ağacı yeniləyir. Virtual DOM yaddaşdakı yüngül surətdir; yalnız dəyişən hissələri tapır və yalnız oranı yeniləyir.",
+                en: "Real DOM is slow as it updates the whole tree. Virtual DOM is a lightweight memory copy; it finds changes (Diffing) and updates only those parts (Reconciliation)."
+            }
+        },
+        {
+            id: 2,
+            q: {
+                tr: "var, let ve const arasındaki farklar nelerdir?",
+                az: "var, let və const arasındakı fərqlər nələrdir?",
+                en: "Differences between var, let, and const?"
+            },
+            a: {
+                tr: "var: Function scope'tur, tekrar tanımlanabilir. let: Block scope'tur, değeri değişebilir. const: Block scope'tur, değeri sonradan değiştirilemez (sabit).",
+                az: "var: Function scope-dur, təkrar təyin edilə bilər. let: Block scope-dur, dəyəri dəyişə bilər. const: Block scope-dur, dəyəri sonradan dəyişdirilə bilməz.",
+                en: "var: Function-scoped, can be redeclared. let: Block-scoped, reassignable. const: Block-scoped, cannot be reassigned (constant)."
+            }
+        },
+        {
+            id: 3,
+            q: {
+                tr: "CSS Box Model nedir?",
+                az: "CSS Box Model nədir?",
+                en: "What is the CSS Box Model?"
+            },
+            a: {
+                tr: "Her HTML elemanı bir kutudur. İçten dışa 4 katmandan oluşur: Content (İçerik), Padding (İç boşluk), Border (Kenarlık) ve Margin (Dış boşluk).",
+                az: "Hər HTML elementi bir qutudur. İçdən çölə 4 qatdan ibarətdir: Content (Məzmun), Padding (İç boşluq), Border (Çərçivə) və Margin (Kənar boşluq).",
+                en: "Every HTML element is a box. Consists of 4 layers from inside out: Content, Padding, Border, and Margin."
+            }
+        },
+        {
+            id: 4,
+            q: {
+                tr: "Closure (Kapanım) nedir?",
+                az: "Closure nədir?",
+                en: "What is a Closure?"
+            },
+            a: {
+                tr: "Bir fonksiyonun, kendi kapsamı (scope) dışındaki değişkenlere, o fonksiyon çalışmayı bitirse bile erişebilme yeteneğidir. Hafızada veri tutmayı sağlar.",
+                az: "Bir funksiyanın, öz əhatə dairəsi (scope) xaricindəki dəyişənlərə, o funksiya işini bitirsə belə daxil ola bilmə qabiliyyətidir.",
+                en: "A function's ability to access variables from its outer scope even after the outer function has finished executing."
+            }
+        },
+        {
+            id: 5,
+            q: {
+                tr: "SSR (Server-Side Rendering) ve CSR (Client-Side Rendering) farkı?",
+                az: "SSR və CSR arasındakı fərq?",
+                en: "Difference between SSR and CSR?"
+            },
+            a: {
+                tr: "CSR'da sayfa boş gelir, içeriği tarayıcıdaki JS oluşturur (SEO zayıf). SSR'da (Next.js vb.) sayfa sunucuda hazırlanıp dolu gelir (SEO güçlü, hızlı açılış).",
+                az: "CSR-də səhifə boş gəlir, məzmunu brauzerdəki JS yaradır. SSR-də səhifə serverdə hazırlanıb dolu gəlir (SEO üçün yaxşıdır).",
+                en: "In CSR, the browser builds content via JS (weak SEO). In SSR, the server sends fully rendered HTML (strong SEO, fast initial load)."
+            }
+        },
+        {
+            id: 6,
+            q: {
+                tr: "CORS hatası nedir?",
+                az: "CORS xətası nədir?",
+                en: "What is a CORS error?"
+            },
+            a: {
+                tr: "Cross-Origin Resource Sharing. Tarayıcının, güvenlik nedeniyle web sitenizin farklı bir domaindeki API'ye istek atmasını engellemesidir. Sunucu tarafında izin verilmelidir.",
+                az: "Brauzerin, təhlükəsizlik səbəbiylə saytınızın fərqli bir domendəki API-yə sorğu göndərməsini əngəlləməsidir. Server tərəfində icazə verilməlidir.",
+                en: "Browser security feature blocking requests to a different domain. The server must explicitly allow it via headers."
+            }
+        },
+        {
+            id: 7,
+            q: {
+                tr: "Promise ve Async/Await farkı nedir?",
+                az: "Promise və Async/Await fərqi nədir?",
+                en: "Difference between Promise and Async/Await?"
+            },
+            a: {
+                tr: "İkisi de asenkron işlemler içindir. Promise `.then()` zinciri kullanır. Async/Await ise Promise'in daha modern halidir, kodun senkron (sıralı) gibi okunmasını sağlar.",
+                az: "Hər ikisi asinxron əməliyyatlar üçündür. Async/Await Promise-in daha müasir halıdır, kodun sinxron (sıralı) kimi oxunmasını təmin edir.",
+                en: "Both handle async ops. Async/Await is syntactic sugar over Promises, making code look synchronous and easier to read."
+            }
+        },
+        {
+            id: 8,
+            q: {
+                tr: "LocalStorage, SessionStorage ve Cookie farkları?",
+                az: "LocalStorage, SessionStorage və Cookie fərqləri?",
+                en: "LocalStorage vs SessionStorage vs Cookie?"
+            },
+            a: {
+                tr: "LocalStorage: Kalıcıdır, silinmez. SessionStorage: Sekme kapanınca silinir. Cookie: Boyutu küçüktür, sunucuya her istekte gönderilir ve süresi vardır.",
+                az: "LocalStorage: Qalıcıdır. SessionStorage: Tab bağlananda silinir. Cookie: Kiçikdir, serverə hər sorğuda göndərilir və vaxtı bitəndə silinir.",
+                en: "LocalStorage: Persistent. SessionStorage: Cleared on tab close. Cookie: Small, sent to server with every request, has expiration."
+            }
+        },
+        {
+            id: 9,
+            q: {
+                tr: "Event Bubbling ve Event Capturing nedir?",
+                az: "Event Bubbling və Event Capturing nədir?",
+                en: "What is Event Bubbling and Capturing?"
+            },
+            a: {
+                tr: "Bubbling: Olayın tıklandığı elementten yukarı (parent) doğru yayılmasıdır (Default). Capturing: Olayın en üstten (root) hedefe doğru inmesidir.",
+                az: "Bubbling: Hadisənin elementdən yuxarı (parent) doğru yayılmasıdır. Capturing: Hadisənin ən üstdən hədəfə doğru enməsidir.",
+                en: "Bubbling: Event flows from target up to parents (Default). Capturing: Event flows from root down to target."
+            }
+        },
+        {
+            id: 10,
+            q: {
+                tr: "Semantic HTML neden önemlidir?",
+                az: "Semantic HTML niyə vacibdir?",
+                en: "Why is Semantic HTML important?"
+            },
+            a: {
+                tr: "Sadece `div` kullanmak yerine anlama uygun etiketler (`header`, `article`, `footer`) kullanmaktır. SEO (Arama motorları) ve Erişilebilirlik (Ekran okuyucular) için kritiktir.",
+                az: "Yalnız `div` istifadə etmək əvəzinə mənaya uyğun etiketlər (`header`, `article`) istifadə etməkdir. SEO və Əlçatanlıq üçün vacibdir.",
+                en: "Using meaningful tags (`header`, `article`) instead of just `div`. Critical for SEO (Search Engines) and Accessibility (Screen readers)."
+            }
+        },
+        {
+            id: 11,
+            q: {
+                tr: "React'te 'prop drilling' nedir ve nasıl çözülür?",
+                az: "React-də 'prop drilling' nədir və necə həll olunur?",
+                en: "What is 'prop drilling' in React and how to solve it?"
+            },
+            a: {
+                tr: "Verinin üst bileşenden en alt bileşene kadar gereksiz ara bileşenlerden geçirilmesidir. Context API, Redux veya Zustand kullanılarak çözülür.",
+                az: "Məlumatın üst komponentdən ən alt komponentə qədər lazımsız ara komponentlərdən keçirilməsidir. Context API və ya Redux ilə həll olunur.",
+                en: "Passing data through many layers of components just to reach a deep child. Solved using Context API, Redux, or Zustand."
+            }
+        },
+        {
+            id: 12,
+            q: {
+                tr: "TypeScript kullanmanın avantajı nedir?",
+                az: "TypeScript istifadə etməyin üstünlüyü nədir?",
+                en: "What is the advantage of using TypeScript?"
+            },
+            a: {
+                tr: "JavaScript'e statik tip (static typing) özelliği katar. Hataları kod yazarken yakalar (compile-time), otomatik tamamlama sunar ve büyük projeleri yönetmeyi kolaylaştırır.",
+                az: "JavaScript-ə statik tip xüsusiyyəti qatır. Xətaları kod yazarkən tutur, avtomatik tamamlama təqdim edir və böyük layihələri idarə etməyi asanlaşdırır.",
+                en: "Adds static typing to JS. Catches errors at compile-time, provides better autocompletion, and makes managing large projects easier."
+            }
+        },
+        {
+            id: 13,
+            q: {
+                tr: "Critical Rendering Path nedir?",
+                az: "Critical Rendering Path nədir?",
+                en: "What is the Critical Rendering Path?"
+            },
+            a: {
+                tr: "Tarayıcının HTML, CSS ve JS'i alıp ekrana piksel olarak çizene kadar geçen adımlardır (DOM -> CSSOM -> Render Tree -> Layout -> Paint).",
+                az: "Brauzerin HTML, CSS və JS-i alıb ekrana piksel olaraq çəkənə qədər keçən addımlardır (DOM -> CSSOM -> Render Tree -> Layout -> Paint).",
+                en: "The sequence of steps the browser takes to convert HTML, CSS, and JS into actual pixels on the screen."
+            }
+        },
+        {
+            id: 14,
+            q: {
+                tr: "Single Page Application (SPA) nedir?",
+                az: "Single Page Application (SPA) nədir?",
+                en: "What is a Single Page Application (SPA)?"
+            },
+            a: {
+                tr: "Tek bir HTML dosyası yükleyen ve kullanıcı etkileşime girdikçe sayfayı yenilemeden içeriği dinamik olarak güncelleyen web uygulamasıdır (Örn: React, Vue).",
+                az: "Tək bir HTML faylı yükləyən və istifadəçi hərəkət etdikcə səhifəni yeniləmədən məzmunu dinamik olaraq yeniləyən veb tətbiqidir.",
+                en: "A web app that loads a single HTML file and dynamically updates content as the user interacts, without reloading the page."
+            }
+        },
+        {
+            id: 15,
+            q: {
+                tr: "Hoisting nedir?",
+                az: "Hoisting nədir?",
+                en: "What is Hoisting?"
+            },
+            a: {
+                tr: "JavaScript'te değişken ve fonksiyon tanımlarının kod çalışmadan önce kapsamın en tepesine taşınması (veya hafızada yer ayrılması) durumudur.",
+                az: "JavaScript-də dəyişən və funksiya təyinlərinin kod işləmədən əvvəl əhatə dairəsinin ən təpəsinə daşınması və ya yaddaşda yer ayrılmasıdır.",
+                en: "JS mechanism where variable and function declarations are moved to the top of their scope before code execution."
+            }
+        },
+        {
+            id: 16,
+            q: {
+                tr: "Debounce ve Throttle farkı nedir?",
+                az: "Debounce və Throttle fərqi nədir?",
+                en: "Difference between Debounce and Throttle?"
+            },
+            a: {
+                tr: "Debounce: İşlem bittikten belli bir süre sonra fonksiyonu çalıştırır (Örn: Arama çubuğu). Throttle: Fonksiyonu belli zaman aralıklarıyla düzenli çalıştırır (Örn: Scroll).",
+                az: "Debounce: Əməliyyat bitdikdən müəyyən müddət sonra funksiyanı işlədir. Throttle: Funksiyanı müəyyən zaman intervalları ilə nizamlı işlədir.",
+                en: "Debounce: Runs function only after a delay since the last call (e.g., Search). Throttle: Runs function at regular intervals (e.g., Scroll)."
+            }
+        },
+        {
+            id: 17,
+            q: {
+                tr: "Flexbox ve Grid arasındaki temel fark?",
+                az: "Flexbox və Grid arasındakı əsas fərq?",
+                en: "Main difference between Flexbox and Grid?"
+            },
+            a: {
+                tr: "Flexbox tek boyutludur (sadece satır YA DA sütun). Grid iki boyutludur (hem satır HEM sütun aynı anda). Grid daha karmaşık düzenler içindir.",
+                az: "Flexbox tək ölçülüdür (yalnız sətir VƏ YA sütun). Grid iki ölçülüdür (həm sətir HƏM sütun). Grid daha mürəkkəb dizaynlar üçündür.",
+                en: "Flexbox is one-dimensional (row OR column). Grid is two-dimensional (row AND column). Grid is for complex layouts."
+            }
+        },
+        {
+            id: 18,
+            q: {
+                tr: "Responsive Design (Duyarlı Tasarım) nasıl yapılır?",
+                az: "Responsive Design necə edilir?",
+                en: "How to implement Responsive Design?"
+            },
+            a: {
+                tr: "Meta viewport etiketi, CSS Media Queries (`@media`), esnek görseller (max-width: 100%) ve esnek birimler (rem, %, vh/vw) kullanılarak yapılır.",
+                az: "Meta viewport etiketi, CSS Media Queries, elastik şəkillər və elastik vahidlər (rem, %) istifadə edilərək edilir.",
+                en: "Implemented using Meta viewport tag, CSS Media Queries, fluid images, and flexible units (rem, %, vh/vw)."
+            }
+        },
+        {
+            id: 19,
+            q: {
+                tr: "Web Accessibility (Erişilebilirlik - a11y) nedir?",
+                az: "Web Accessibility (a11y) nədir?",
+                en: "What is Web Accessibility (a11y)?"
+            },
+            a: {
+                tr: "Web sitelerinin engelli bireyler (görme, işitme vb.) tarafından da rahatça kullanılabilmesi için yapılan düzenlemelerdir (Alt text, ARIA etiketleri, klavye kontrolü).",
+                az: "Veb saytların əlilliyi olan şəxslər tərəfindən də rahat istifadə edilə bilməsi üçün edilən tənzimləmələrdir (Alt text, klaviatura nəzarəti).",
+                en: "Designing websites so they can be used by people with disabilities (Using Alt text, ARIA labels, keyboard navigation)."
+            }
+        },
+        {
+            id: 20,
+            q: {
+                tr: "HTTP/2 ve HTTP/1.1 farkı nedir (Frontend açısından)?",
+                az: "HTTP/2 və HTTP/1.1 fərqi nədir?",
+                en: "HTTP/2 vs HTTP/1.1 (Frontend perspective)?"
+            },
+            a: {
+                tr: "HTTP/1.1 her dosya için ayrı bağlantı açar. HTTP/2 tek bir bağlantı üzerinden (Multiplexing) aynı anda birden çok dosya gönderir, bu da siteyi çok hızlandırır.",
+                az: "HTTP/1.1 hər fayl üçün ayrı əlaqə açır. HTTP/2 tək bir əlaqə üzərindən eyni anda birdən çox fayl göndərir, bu da saytı çox sürətləndirir.",
+                en: "HTTP/1.1 opens a new connection for each file. HTTP/2 sends multiple files over a single connection (Multiplexing), speeding up the site."
+            }
+        }
+    ],
+
+    // 5. PROJE FİKİRLERİ (PROJECT HUB)
+    projects: [
+        {
+            id: 1,
+            level: "junior",
+            title: { tr: "Hava Durumu Uygulaması", az: "Hava Proqnozu Tətbiqi", en: "Weather Dashboard" },
+            desc: { tr: "Ücretsiz bir API kullanarak şehir bazlı canlı hava durumu çeken uygulama.", az: "Pulsuz API istifadə edərək canlı hava proqnozu göstərən tətbiq.", en: "A live weather dashboard using a public API." },
+            tech: ["HTML", "CSS", "JavaScript", "OpenWeather API"],
+            features: { tr: ["Anlık derece", "Arka plan değişimi", "5 günlük tahmin"], az: ["Anlıq dərəcə", "Arxa plan dəyişimi", "5 günlük proqnoz"], en: ["Real-time temp", "Dynamic backgrounds", "5-day forecast"] }
+        },
+        {
+            id: 2,
+            level: "mid",
+            title: { tr: "E-Ticaret Ürün Filtreleme", az: "E-Ticarət Məhsul Filtrləmə", en: "E-commerce Product Filter" },
+            desc: { tr: "Karmaşık JSON verilerini kategoriye, fiyata ve puanlamaya göre listeleyen bir arayüz.", az: "Məhsulları kateqoriya və qiymətə görə filtrələyən interfeys.", en: "Interface to filter products by category, price, and rating." },
+            tech: ["React/Vue", "Tailwind CSS", "Redux/Context API"],
+            features: { tr: ["Debounced arama", "Çoklu kategori seçimi", "Fiyat aralığı (Slider)"], az: ["Debounced axtarış", "Qiymət slideri", "Səbətə əlavə et"], en: ["Debounced search", "Multi-category select", "Price range slider"] }
+        },
+        {
+            id: 3,
+            level: "expert",
+            title: { tr: "Kripto Takip Portfolyosu", az: "Kripto İzləmə Portfolyosu", en: "Crypto Portfolio Tracker" },
+            desc: { tr: "Canlı verilerle (WebSocket) güncellenen, grafik kütüphaneleri içeren dashboard.", az: "WebSocket istifadə edərək canlı kripto qiymətlərini göstərən tablov.", en: "Real-time dashboard with charts using live data (WebSockets)." },
+            tech: ["Next.js", "Chart.js/D3.js", "WebSocket", "Framer Motion"],
+            features: { tr: ["Canlı fiyat grafikleri", "Kâr/Zarar hesaplayıcı", "Mobil uyumlu tasarım"], az: ["Canlı qiymət qrafikləri", "Mənfəət/Zərər hesablama", "Animasiyalar"], en: ["Live price charts", "P&L calculator", "Smooth animations"] }
+        }
     ]
 };
 
@@ -1831,6 +2134,298 @@ contentData['backend'] = {
                 az: "Öyrənmək üçün mütləq bəli! Linux (Ubuntu) qurub, SSH ilə qoşulub, Nginx və bir məlumat bazası qaldırmaq sizə backend-in necə işlədiyini həqiqətən öyrədər.",
                 en: "For learning, absolutely yes! Setting up Linux, connecting via SSH, and running Nginx/DB teaches you how backend really works."
             }
+        }
+    ],
+
+    // 5. MÜLAKAT SORULARI (INTERVIEW PREP)
+    interview: [
+        {
+            id: 1,
+            q: {
+                tr: "REST API ve GraphQL arasındaki fark nedir?",
+                az: "REST API və GraphQL arasındakı fərq nədir?",
+                en: "Difference between REST API and GraphQL?"
+            },
+            a: {
+                tr: "REST'te her veri için farklı bir URL'ye (endpoint) istek atarsınız ve fazla/eksik veri gelebilir. GraphQL'de tek bir endpoint vardır ve sadece istediğiniz alanları (fields) istersiniz, bu da ağ trafiğini azaltır.",
+                az: "REST-də hər məlumat üçün fərqli bir URL-ə sorğu göndərirsiniz. GraphQL-də tək bir endpoint vardır və yalnız istədiyiniz sahələri istəyirsiniz, bu da şəbəkə trafikini azaldır.",
+                en: "REST uses multiple endpoints for data and may over/under-fetch. GraphQL uses a single endpoint and allows you to fetch exactly what you need, reducing network traffic."
+            }
+        },
+        {
+            id: 2,
+            q: {
+                tr: "ACID Prensipleri nedir? (Veritabanı)",
+                az: "ACID Prinsipləri nədir?",
+                en: "What are ACID Properties?"
+            },
+            a: {
+                tr: "Atomicity (Ya hep ya hiç), Consistency (Tutarlılık), Isolation (İzolasyon), Durability (Dayanıklılık). Bir veritabanı işleminin (Transaction) güvenli bir şekilde tamamlanmasını sağlayan kurallardır.",
+                az: "Atomicity, Consistency, Isolation, Durability. Bir verilənlər bazası əməliyyatının təhlükəsiz şəkildə tamamlanmasını təmin edən qaydalardır.",
+                en: "Atomicity, Consistency, Isolation, Durability. Standard properties that guarantee that database transactions are processed reliably."
+            }
+        },
+        {
+            id: 3,
+            q: {
+                tr: "Process ve Thread farkı nedir?",
+                az: "Process və Thread fərqi nədir?",
+                en: "Difference between Process and Thread?"
+            },
+            a: {
+                tr: "Process (İşlem), çalışan bir programın kendisidir ve kendi belleği vardır. Thread (İş parçacığı) ise process'in içinde çalışan, belleği paylaşan daha hafif alt birimlerdir.",
+                az: "Process çalışan proqramdır və öz yaddaşı var. Thread isə process daxilində çalışan və yaddaşı paylaşan daha kiçik vahidlərdir.",
+                en: "A Process is an executing program with its own memory. A Thread is a lighter sub-unit within a process that shares the memory."
+            }
+        },
+        {
+            id: 4,
+            q: {
+                tr: "Vertical Scaling ve Horizontal Scaling farkı nedir?",
+                az: "Vertical vs Horizontal Scaling fərqi nədir?",
+                en: "Vertical vs Horizontal Scaling?"
+            },
+            a: {
+                tr: "Vertical (Dikey): Mevcut sunucunun RAM/CPU'sunu artırmaktır. Horizontal (Yatay): Sisteme yeni sunucular ekleyerek yükü dağıtmaktır. Yatay ölçekleme daha esnektir.",
+                az: "Vertical: Mövcud serverin RAM/CPU-sunu artırmaq. Horizontal: Sistemə yeni serverlər əlavə etmək. Yatay miqyaslama daha elastikdir.",
+                en: "Vertical: Adding more power (RAM/CPU) to existing server. Horizontal: Adding more servers to the pool. Horizontal is more scalable."
+            }
+        },
+        {
+            id: 5,
+            q: {
+                tr: "N+1 Problemi nedir?",
+                az: "N+1 Problemi nədir?",
+                en: "What is the N+1 Problem?"
+            },
+            a: {
+                tr: "ORM kullanırken sıkça yapılan bir hatadır. Bir ana veriyi çektikten sonra (1 sorgu), ona bağlı alt verileri çekmek için döngü içinde tekrar tekrar sorgu atmaktır (N sorgu). Performansı öldürür.",
+                az: "ORM istifadə edərkən edilən səhvdir. Bir əsas məlumatı çəkdikdən sonra (1 sorğu), ona bağlı alt məlumatları çəkmək üçün dövr içində təkrar sorğu atmaqdır (N sorğu).",
+                en: "A common performance issue where code fetches one parent record (1 query) and then executes N additional queries to fetch related children records."
+            }
+        },
+        {
+            id: 6,
+            q: {
+                tr: "TCP ve UDP arasındaki fark nedir?",
+                az: "TCP və UDP arasındakı fərq nədir?",
+                en: "Difference between TCP and UDP?"
+            },
+            a: {
+                tr: "TCP güvenlidir, veri paketlerinin sırayla ve eksiksiz gittiğini garanti eder (Örn: Web siteleri). UDP hızlıdır ama paket kaybını önemsemez (Örn: Online oyunlar, Canlı yayın).",
+                az: "TCP təhlükəsizdir, verilənlərin tam getdiyini zəmanət edir. UDP sürətlidir amma paket itkisini önəmsəmir (Məs: Online oyunlar).",
+                en: "TCP is reliable, guarantees delivery and order (Web). UDP is fast but connectionless and doesn't guarantee delivery (Gaming/Streaming)."
+            }
+        },
+        {
+            id: 7,
+            q: {
+                tr: "SOLID prensipleri ne işe yarar?",
+                az: "SOLID prinsipləri nə işə yarayır?",
+                en: "What is the purpose of SOLID principles?"
+            },
+            a: {
+                tr: "Yazılımın daha anlaşılır, esnek ve bakımı kolay olmasını sağlayan 5 temel prensiptir (Single Responsibility, Open/Closed, Liskov, Interface Segregation, Dependency Inversion).",
+                az: "Proqram təminatının daha başa düşülən və elastik olmasını təmin edən 5 əsas prinsipdir.",
+                en: "5 design principles intended to make software designs more understandable, flexible, and maintainable."
+            }
+        },
+        {
+            id: 8,
+            q: {
+                tr: "Deadlock (Kilitlenme) nedir?",
+                az: "Deadlock nədir?",
+                en: "What is a Deadlock?"
+            },
+            a: {
+                tr: "İki veya daha fazla işlemin, birbirlerinin bitmesini bekleyerek sonsuza kadar durması durumudur. Trafik sıkışıklığı gibidir, kimse hareket edemez.",
+                az: "İki və ya daha çox prosesin bir-birini gözləyərək sonsuza qədər dayanması vəziyyətidir.",
+                en: "A situation where two or more processes are unable to proceed because each is waiting for the other to release a resource."
+            }
+        },
+        {
+            id: 9,
+            q: {
+                tr: "Index nedir ve veritabanında neden kullanılır?",
+                az: "Index nədir və nə üçün istifadə olunur?",
+                en: "What is an Index and why use it in DB?"
+            },
+            a: {
+                tr: "Index, bir kitaptaki 'içindekiler' sayfası gibidir. Veritabanında arama işlemlerini (SELECT) çok hızlandırır ancak yazma işlemlerini (INSERT/UPDATE) biraz yavaşlatır.",
+                az: "Index bir kitabın 'mündəricat' səhifəsi kimidir. Axtarış əməliyyatlarını sürətləndirir amma yazma əməliyyatlarını bir az yavaşladır.",
+                en: "Like a book's index. It significantly speeds up data retrieval (SELECT) operations but slightly slows down data modification (INSERT/UPDATE)."
+            }
+        },
+        {
+            id: 10,
+            q: {
+                tr: "Docker Container ve Virtual Machine farkı?",
+                az: "Docker Container və Virtual Machine fərqi?",
+                en: "Docker Container vs Virtual Machine?"
+            },
+            a: {
+                tr: "VM, kendi işletim sistemine sahip ağır bir sanal bilgisayardır. Container ise işletim sistemi çekirdeğini paylaşan, çok daha hafif ve hızlı başlatılabilen izole bir pakettir.",
+                az: "VM öz əməliyyat sisteminə sahib ağır virtual kompüterdir. Container isə əməliyyat sistemi çəyirəyini paylaşan, daha yüngül və sürətli paketdir.",
+                en: "VM is a heavy virtual computer with its own OS. Container is lightweight, shares the host OS kernel, and starts much faster."
+            }
+        },
+        {
+            id: 11,
+            q: {
+                tr: "Session ve JWT (JSON Web Token) farkı nedir?",
+                az: "Session və JWT arasındakı fərq nədir?",
+                en: "Difference between Session and JWT?"
+            },
+            a: {
+                tr: "Session sunucu tarafında (RAM/Veritabanı) saklanır ve stateful'dur. JWT ise istemci (client) tarafında saklanır, şifrelidir ve stateless (durumsuz) yapıdadır, sunucuyu yormaz.",
+                az: "Session server tərəfində saxlanılır. JWT isə müştəri (client) tərəfində saxlanılır, şifrəlidir və stateless (vəziyyətsiz) quruluşdadır, serveri yormur.",
+                en: "Sessions are stored on the server and are stateful. JWTs are stored on the client side, encrypted, and are stateless, reducing server load."
+            }
+        },
+        {
+            id: 12,
+            q: {
+                tr: "Monolitik ve Mikroservis mimari farkı nedir?",
+                az: "Monolitik və Mikroservis arxitektura fərqi nədir?",
+                en: "Monolithic vs Microservices architecture?"
+            },
+            a: {
+                tr: "Monolitik, uygulamanın tek bir bütün parça halinde çalıştığı yapıdır. Mikroservisler ise uygulamanın küçük, bağımsız ve birbiriyle iletişim kuran parçalara bölünmesidir.",
+                az: "Monolitik, tətbiqin tək bir parça halında çalışdığı strukturdur. Mikroservislər isə tətbiqin kiçik, müstəqil və bir-biri ilə əlaqə quran hissələrə bölünməsidir.",
+                en: "Monolithic is a single unified unit. Microservices break the app into small, independent services communicating with each other."
+            }
+        },
+        {
+            id: 13,
+            q: {
+                tr: "SQL ve NoSQL veritabanları ne zaman seçilmelidir?",
+                az: "SQL və NoSQL verilənlər bazaları nə vaxt seçilməlidir?",
+                en: "When to choose SQL vs NoSQL?"
+            },
+            a: {
+                tr: "Veri yapısı sabitse ve ilişkiler (JOIN) önemliyse SQL (MySQL, PostgreSQL). Veri yapısı değişken, hız ve büyük ölçekleme gerekiyorsa NoSQL (MongoDB, Redis).",
+                az: "Məlumat strukturu sabitdirsə SQL (MySQL). Məlumat strukturu dəyişkən, sürət və böyük miqyaslama lazımdırsa NoSQL (MongoDB).",
+                en: "Use SQL for structured data and complex relationships (JOINs). Use NoSQL for unstructured data, speed, and horizontal scaling."
+            }
+        },
+        {
+            id: 14,
+            q: {
+                tr: "CAP Teoremi nedir?",
+                az: "CAP Teoremi nədir?",
+                en: "What is the CAP Theorem?"
+            },
+            a: {
+                tr: "Dağıtık sistemlerde; Consistency (Tutarlılık), Availability (Erişilebilirlik) ve Partition Tolerance (Bölünme Toleransı) özelliklerinden aynı anda sadece ikisinin sağlanabileceğini söyler.",
+                az: "Paylanmış sistemlərdə; Consistency, Availability və Partition Tolerance xüsusiyyətlərindən eyni anda yalnız ikisinin təmin edilə biləcəyini söyləyir.",
+                en: "States that a distributed system can only provide two of the three guarantees: Consistency, Availability, and Partition Tolerance."
+            }
+        },
+        {
+            id: 15,
+            q: {
+                tr: "Load Balancer (Yük Dengeleyici) ne işe yarar?",
+                az: "Load Balancer nə işə yarayır?",
+                en: "What does a Load Balancer do?"
+            },
+            a: {
+                tr: "Gelen ağ trafiğini birden fazla sunucuya eşit şekilde dağıtarak tek bir sunucunun aşırı yüklenmesini engeller ve sistemin çökme riskini azaltır (Örn: Nginx).",
+                az: "Gələn trafik axınını bir neçə server arasında bərabər paylayaraq tək bir serverin yüklənməsinin qarşısını alır və sistemin çökmə riskini azaldır.",
+                en: "Distributes incoming network traffic across multiple servers to prevent overload on a single server and increase reliability."
+            }
+        },
+        {
+            id: 16,
+            q: {
+                tr: "CI/CD (Continuous Integration/Deployment) nedir?",
+                az: "CI/CD nədir?",
+                en: "What is CI/CD?"
+            },
+            a: {
+                tr: "Yazılım geliştirme sürecinde kodun otomatik olarak test edilmesi (CI) ve canlı ortama (production) otomatik olarak yüklenmesi (CD) sürecidir.",
+                az: "Kodun avtomatik olaraq test edilməsi (CI) və canlı mühitə (production) avtomatik yüklənməsi (CD) prosesidir.",
+                en: "The practice of automating the integration of code changes (CI) and the deployment to production environments (CD)."
+            }
+        },
+        {
+            id: 17,
+            q: {
+                tr: "HTTP Status Code 401 ve 403 arasındaki fark nedir?",
+                az: "HTTP 401 və 403 arasındakı fərq nədir?",
+                en: "Difference between HTTP 401 and 403?"
+            },
+            a: {
+                tr: "401 (Unauthorized): Kimliğinizi doğrulamadınız (Giriş yapmalısın). 403 (Forbidden): Giriş yaptınız ama bu kaynağa erişim yetkiniz yok (Admin değilsin).",
+                az: "401: Kimliyinizi təsdiqləmədiniz (Giriş etməlisən). 403: Giriş etdiniz amma bu resursa çatmağa icazəniz yoxdur.",
+                en: "401 means unauthenticated (please log in). 403 means authenticated but unauthorized (you don't have permission for this resource)."
+            }
+        },
+        {
+            id: 18,
+            q: {
+                tr: "Message Queue (RabbitMQ, Kafka) neden kullanılır?",
+                az: "Message Queue (Mesaj Növbəsi) niyə istifadə olunur?",
+                en: "Why use a Message Queue?"
+            },
+            a: {
+                tr: "Uzun süren işlemleri (mail atma, dosya işleme) asenkron olarak arka planda yapmak için kullanılır. Ana uygulama kullanıcıyı bekletmez.",
+                az: "Uzun sürən əməliyyatları (mail atma, fayl emalı) asinxron olaraq arxa planda etmək üçün istifadə olunur. Əsas tətbiq istifadəçini gözlətmir.",
+                en: "Used to handle heavy tasks (emails, file processing) asynchronously in the background. The main app doesn't make the user wait."
+            }
+        },
+        {
+            id: 19,
+            q: {
+                tr: "WebSocket ile HTTP arasındaki temel fark?",
+                az: "WebSocket və HTTP arasındakı əsas fərq?",
+                en: "Main difference between WebSocket and HTTP?"
+            },
+            a: {
+                tr: "HTTP tek yönlüdür (İstek -> Cevap -> Kapanır). WebSocket ise çift yönlü ve sürekli açık bir kanaldır, gerçek zamanlı veriler (Chat, Oyun) için kullanılır.",
+                az: "HTTP tək yönlüdür (Sorğu -> Cavab -> Bağlanır). WebSocket isə iki yönlü və davamlı açıq kanaldır, real vaxtlı məlumatlar (Chat, Oyun) üçün istifadə olunur.",
+                en: "HTTP is unidirectional (Request -> Response -> Close). WebSocket is a bidirectional, persistent channel used for real-time data."
+            }
+        },
+        {
+            id: 20,
+            q: {
+                tr: "SQL Injection nedir ve nasıl önlenir?",
+                az: "SQL Injection nədir və necə qarşısı alınır?",
+                en: "What is SQL Injection and how to prevent it?"
+            },
+            a: {
+                tr: "Saldırganın veritabanı sorgularına müdahale etmesidir. Önlemek için 'Prepared Statements' veya ORM (Entity Framework, Hibernate vb.) kullanılmalıdır.",
+                az: "Hücumçunun verilənlər bazası sorğularına müdaxilə etməsidir. Qarşısını almaq üçün 'Prepared Statements' və ya ORM istifadə olunmalıdır.",
+                en: "An attack where malicious SQL is inserted into queries. Prevent it by using 'Prepared Statements' or an ORM."
+            }
+        }
+    ],
+
+    // 5. PROJE FİKİRLERİ (PROJECT HUB)
+    projects: [
+        {
+            id: 1,
+            level: "junior",
+            title: { tr: "URL Kısaltıcı API", az: "URL Qısaldıcı API", en: "URL Shortener API" },
+            desc: { tr: "Uzun URL'leri alan ve kısa benzersiz kodlar üreten bir RESTful servis.", az: "Uzun URL-ləri götürüb qısa unikal kodlar yaradan servis.", en: "A RESTful service that takes long URLs and generates short unique codes." },
+            tech: ["Node.js/Python", "Express/Flask", "MongoDB/SQL"],
+            features: { tr: ["Özel kısa kod desteği", "Tıklama sayacı", "Yönlendirme mantığı"], az: ["Xüsusi kod dəstəyi", "Keçid sayğacı", "Redirect məntiqi"], en: ["Custom alias support", "Click analytics", "Redirect logic"] }
+        },
+        {
+            id: 2,
+            level: "mid",
+            title: { tr: "Real-time Chat Uygulaması", az: "Real-time Çat Tətbiqi", en: "Real-time Chat App" },
+            desc: { tr: "Kullanıcıların odalara ayrılarak anlık mesajlaşabildiği bir platform.", az: "İstifadəçilərin otaqlara bölünərək mesajlaşa bildiyi platform.", en: "A platform where users can message each other in rooms in real-time." },
+            tech: ["Socket.io", "Redis (Pub/Sub)", "PostgreSQL"],
+            features: { tr: ["Kullanıcı durumu (Online/Offline)", "Mesaj geçmişi", "Dosya paylaşımı"], az: ["Onlayn statusu", "Mesaj tarixçəsi", "Fayl paylaşımı"], en: ["User presence", "Chat history", "File sharing"] }
+        },
+        {
+            id: 3,
+            level: "expert",
+            title: { tr: "Mikroservis E-Ticaret Bacxkendi", az: "Mikroservis E-Ticarət Backendi", en: "Microservices E-commerce" },
+            desc: { tr: "Ödeme, stok ve sipariş servislerinin birbirinden bağımsız çalıştığı mimari.", az: "Ödəniş, stok və sifariş servislərinin müstəqil çalışdığı memarlıq.", en: "Architecture where payment, stock, and order services run independently." },
+            tech: ["Go/Java", "RabbitMQ/Kafka", "Docker", "gRPC"],
+            features: { tr: ["Event-driven iletişim", "Unit & Integration testleri", "API Gateway entegrasyonu"], az: ["Event-driven əlaqə", "Sifariş izləmə", "Konteynerləşdirmə"], en: ["Event-driven comms", "Distributed transactions", "API Gateway"] }
         }
     ]
 };
@@ -2073,7 +2668,7 @@ contentData['cloud'] = {
         {
             id: 1,
             q: {
-                tr: "Hangi bulut sağlayıcısını seçmeliyim? (AWS vs Azure vs GCP)",
+                tr: "Hangi bulut sağlayıcısını seçmeliyiz? (AWS vs Azure vs GCP)",
                 az: "Hansı bulud provayderini seçməliyəm? (AWS vs Azure vs GCP)",
                 en: "Which cloud provider should I choose? (AWS vs Azure vs GCP)"
             },
@@ -2146,6 +2741,112 @@ contentData['cloud'] = {
                 tr: "Sunucu yönetimiyle hiç uğraşmadığınız, kodunuzun sadece çalıştığı süre kadar (milisaniye bazında) ücret ödediğiniz modeldir (Örn: AWS Lambda). Geleceğin mimarisidir.",
                 az: "Server idarəçiliyi ilə məşğul olmadığınız, kodunuzun işlədiyi müddət qədər ödəniş etdiyiniz modeldir (AWS Lambda). Gələcəyin memarlığıdır.",
                 en: "A model where you don't manage servers and only pay for the execution time (milliseconds) of your code (e.g., AWS Lambda). It is the future."
+            }
+        }
+    ]
+};
+contentData['ai-engineering'] = {
+    // 1. YOL HARİTASI (ROADMAP)
+    roadmap: {
+        tr: [
+            { title: "Temeller", items: ["Python (İleri Seviye)", "API Kullanımı (REST)", "Vektör Matematiği Temelleri"], status: "start" },
+            { title: "LLM (Büyük Dil Modelleri) Temelleri", items: ["Transformer Mimarisi Nedir?", "Tokenization", "Temperature & Top-K", "OpenAI & Anthropic API"], status: "start" },
+            { title: "Prompt Engineering", items: ["Zero-shot & Few-shot", "Chain of Thought (CoT)", "Prompt Optimasyonu", "Sistem Mesajları"], status: "mid" },
+            { title: "RAG (Retrieval-Augmented Generation)", items: ["Vector Veritabanları (Pinecone/Chroma)", "Embeddings", "LangChain & LlamaIndex", "Context Window Yönetimi"], status: "mid" },
+            { title: "AI Agent Geliştirme", items: ["AutoGPT Mantığı", "Tool Calling (Function calling)", "ReAct Framework", "Multi-Agent Sistemler"], status: "advanced" },
+            { title: "Model Fine-Tuning", items: ["LoRA / QLoRA", "HuggingFace Transformers", "Veri Seti Hazırlama", "Maliyet Optimizasyonu"], status: "advanced" },
+            { title: "Deployment & Ops (LLMOps)", items: ["Ollama (Local LLM)", "Vercel AI SDK", "Model Monitoring", "Security & Jailbreak Koruması"], status: "expert" }
+        ],
+        az: [
+            { title: "Təməllər", items: ["Python (İrəli)", "API İstifadəsi", "Vektor Riyaziyyatı"], status: "start" },
+            { title: "LLM Əsasları", items: ["Transformer Arxitekturası", "Tokenləşdirmə", "Temperature Parametri", "LLM API-ləri"], status: "start" },
+            { title: "Prompt Mühəndisliyi", items: ["Zero-shot & Few-shot", "Chain of Thought", "Sistem Mesajları"], status: "mid" },
+            { title: "RAG (Məlumat Artırılmış Generasiya)", items: ["Vektor Bazaları", "Embeddings", "LangChain", "Kontekst İdarəetməsi"], status: "mid" },
+            { title: "AI Agent İnkişafı", items: ["AutoGPT", "Function Calling", "Multi-Agent Sistemlər"], status: "advanced" },
+            { title: "Model İncə Sazlama (Fine-Tuning)", items: ["LoRA", "HuggingFace", "Verilənlər Bazası Hazırlığı"], status: "advanced" },
+            { title: "Yerləşdirmə (LLMOps)", items: ["Ollama (Yerli LLM)", "Vercel AI SDK", "Model Monitorinqi"], status: "expert" }
+        ],
+        en: [
+            { title: "Fundamentals", items: ["Advanced Python", "REST APIs", "Vector Math Basics"], status: "start" },
+            { title: "LLM Basics", items: ["Transformer Architecture", "Tokenization", "Temperature & Parameters", "LLM APIs"], status: "start" },
+            { title: "Prompt Engineering", items: ["Zero-shot & Few-shot", "Chain of Thought (CoT)", "System Prompts"], status: "mid" },
+            { title: "RAG (Retrieval-Augmented Generation)", items: ["Vector DBs (Pinecone)", "Embeddings", "LangChain & LlamaIndex", "Context Management"], status: "mid" },
+            { title: "AI Agent Development", items: ["AutoGPT Logic", "Function Calling", "ReAct Framework", "Multi-Agent Systems"], status: "advanced" },
+            { title: "Fine-Tuning", items: ["LoRA / QLoRA", "HuggingFace", "Dataset Prep", "Cost Optimization"], status: "advanced" },
+            { title: "LLMOps & Deployment", items: ["Ollama (Local)", "Vercel AI SDK", "Evaluations (Evals)", "Security/Guardrails"], status: "expert" }
+        ]
+    },
+
+    // 2. KAYNAKLAR (RESOURCES)
+    resources: {
+        items: [
+            { type: 'course', title: 'DeepLearning.AI', url: 'https://www.deeplearning.ai/short-courses/', desc: 'Andrew Ng\'den Prompt Engineering ve LLM üzerine ücretsiz, sertifikalı kısa kurslar.', lang: 'en' },
+            { type: 'doc', title: 'LangChain Docs', url: 'https://python.langchain.com/docs/get_started/introduction', desc: 'LLM uygulamaları geliştirmek için standart kütüphane dokümantasyonu.', lang: 'en' },
+            { type: 'youtube', title: 'AI Jason', url: 'https://youtube.com/@AIJasonZ', desc: 'Sıfırdan AI Agent ve RAG uygulamaları yapmayı öğreten pratik kanal.', lang: 'en' },
+            { type: 'tool', title: 'Hugging Face', url: 'https://huggingface.co', desc: 'Açık kaynak Ai modellerinin (Llama, Mistral) evi.', lang: 'global' },
+            { type: 'tool', title: 'Ollama', url: 'https://ollama.com', desc: 'Kendi bilgisayarınızda Llama 3 gibi modelleri çalıştırmanın en kolay yolu.', lang: 'global' },
+            { type: 'roadmap', title: 'Roadmap.sh (AI)', url: 'https://roadmap.sh/ai-engineer', desc: 'AI Mühendisliği yol haritası.', lang: 'en' }
+        ]
+    },
+
+    // 3. İŞ İMKANLARI (JOBS & SALARY)
+    jobs: {
+        TR: {
+            platforms: ["LinkedIn", "Teknokent AI Startupları", "Bankalar"],
+            top_skills: ["Python", "LangChain", "OpenAI API", "RAG", "Vector DB"],
+            avg_salary: "Junior: 50k-70k TL | Mid: 90k-130k TL | Senior: 160k+ TL"
+        },
+        AZ: {
+            platforms: ["LinkedIn", "Kapital Bank (AI Lab)", "Pasha Bank"],
+            top_skills: ["Python", "Machine Learning", "NLP", "API Integration"],
+            avg_salary: "Junior: 1200-2000 AZN | Mid: 2500-4000 AZN | Senior: 6000+ AZN"
+        },
+        GLOBAL: {
+            platforms: ["Y Combinator Jobs", "Remote AI Jobs", "Wellfound"],
+            top_skills: ["LLM Fine-tuning", "CUDA", "PyTorch", "AI Agents"],
+            avg_salary: "Junior: $6k-$10k | Mid: $12k-$18k | Senior: $25k+ (Aylık/Remote/US)"
+        }
+    },
+
+    // 4. SIKÇA SORULAN SORULAR (FAQ)
+    faq: [
+        {
+            id: 1,
+            q: {
+                tr: "AI Mühendisi ile Veri Bilimci farkı ne?",
+                az: "AI Mühəndisi ilə Data Scientist fərqi nədir?",
+                en: "Difference between AI Engineer and Data Scientist?"
+            },
+            a: {
+                tr: "Veri Bilimci modeli **eğitir** ve matematiksel analiz yapar. AI Mühendisi ise eğitilmiş modelleri (LLM) kullanarak **uygulama geliştirir** (Örn: Chatbot yapmak).",
+                az: "Data Scientist modeli **öyrədir** və analiz edir. AI Mühəndisi isə hazır modellərdən istifadə edərək **tətbiq hazırlayır**.",
+                en: "Data Scientists **train** models and do math. AI Engineers **build apps** using pre-trained models (LLMs) like Chatbots."
+            }
+        },
+        {
+            id: 2,
+            q: {
+                tr: "Matematik bilmek zorunda mıyım?",
+                az: "Riyaziyyat bilmək məcburiyyətindəyəm?",
+                en: "Do I need math?"
+            },
+            a: {
+                tr: "Model eğitmek (Training) için evet. Ancak sadece mevcut modelleri kullanmak (Prompting/API) için hayır, iyi kodlama ve sistem tasarımı yeterlidir.",
+                az: "Model öyrətmək üçün bəli. Lakin hazır modelləri istifadə etmək üçün xeyr, yaxşı kodlama kifayətdir.",
+                en: "For training models, yes. But for just using models (Prompting/API), no. Good coding skills are enough."
+            }
+        },
+        {
+            id: 3,
+            q: {
+                tr: "RAG (Retrieval-Augmented Generation) nedir?",
+                az: "RAG nədir?",
+                en: "What is RAG?"
+            },
+            a: {
+                tr: "ChatGPT'nin bilmediği, size özel verileri (PDF, Şirket verisi) ona okutup, o veriler üzerinden cevap vermesini sağlayan tekniktir.",
+                az: "ChatGPT-nin bilmədiyi şəxsi məlumatlarınızı (PDF, Wşirkət sənədləri) ona oxudub, o məlumatlar əsasında cavab verməsini təmin edən texnikadır.",
+                en: "A technique where you feed your private data (PDFs, Company docs) to an LLM so it can answer questions based on that specific data."
             }
         }
     ]
@@ -2970,3 +3671,564 @@ export const globalResourcesData = [
         ]
     }
 ];
+
+export const glossary = [
+    {
+        term: "API (Application Programming Interface)",
+        desc: {
+            en: "A set of rules that allows different software applications to communicate with each other. It's like a waiter taking your order to the kitchen.",
+            tr: "Farklı yazılımların birbirleriyle konuşmasını sağlayan kurallar bütünü. Müşterinin siparişini mutfağa götüren bir garson gibidir.",
+            az: "Fərqli proqramların bir-biri ilə əlaqə qurmasını təmin edən qaydalar toplusu. Müştərinin sifarişini mətbəxə aparan bir ofisiant kimidir."
+        },
+        category: "General"
+    },
+    {
+        term: "Docker",
+        desc: {
+            en: "A platform that package applications into 'containers', ensuring they run the same way on every computer.",
+            tr: "Uygulamaları 'konteynır'lara paketleyerek her bilgisayarda aynı şekilde çalışmasını sağlayan bir platform.",
+            az: "Tətbiqləri 'konteynerlərə' paketləyərək hər kompüterdə eyni şəkildə işləməsini təmin edən bir platforma."
+        },
+        category: "DevOps"
+    },
+    {
+        term: "CI/CD",
+        desc: {
+            en: "Continuous Integration & Continuous Deployment. Automating the process of testing and shipping code to production.",
+            tr: "Sürekli Entegrasyon ve Sürekli Dağıtım. Kodun otomatik olarak test edilmesi ve canlıya alınması sürecidir.",
+            az: "Daxil olan kodun avtomatik olaraq test edilməsi və canlı mühitə yerləşdirilməsi prosesi."
+        },
+        category: "DevOps"
+    },
+    {
+        term: "Middleware",
+        desc: {
+            en: "Software that acts as a bridge between an operating system or database and applications, especially on a network.",
+            tr: "İstek ile cevap arasında çalışan, veriyi işleyen veya güvenliği kontrol eden 'ara katman' yazılımı.",
+            az: "Sorğu ilə cavab arasında çalışan, məlumatı emal edən və ya təhlükəsizliyi yoxlayan 'ara qatman' proqramı."
+        },
+        category: "Backend"
+    },
+    {
+        term: "State Management",
+        desc: {
+            en: "Managing the data that changes over time in an application (like a shopping cart or user login status).",
+            tr: "Uygulamadaki değişen verilerin (sepet içeriği, giriş durumu vb.) merkezi bir yerden yönetilmesi.",
+            az: "Tətbiqdəki dəyişən məlumatların (səbət məzmunu, giriş statusu və s.) mərkəzi bir yerdən idarə edilməsi."
+        },
+        category: "Frontend"
+    },
+    {
+        term: "Algorithm",
+        desc: {
+            en: "A step-by-step procedure or set of rules to be followed in calculations or other problem-solving operations.",
+            tr: "Bir problemi çözmek veya belirli bir sonuca ulaşmak için takip edilen adım adım yol.",
+            az: "Bir problemi həll etmək və ya müəyyən bir nəticəyə çatmaq üçün izlənilən addım-addım yol."
+        },
+        category: "CS Fundamentals"
+    },
+    {
+        term: "SQL Injection",
+        desc: {
+            en: "A security vulnerability where an attacker can interfere with the queries that an application makes to its database.",
+            tr: "Bir saldırganın uygulamanın veritabanı sorgularına müdahale edebildiği bir güvenlik açığı.",
+            az: "Hücumçunun tətbiqin verilənlər bazası sorğularına müdaxilə edə bildiyi təhlükəsizlik boşluğu."
+        },
+        category: "Security"
+    },
+    {
+        term: "Open Source",
+        desc: {
+            en: "Software with source code that anyone can inspect, modify, and enhance.",
+            tr: "Kaynak kodu herkese açık olan, herkesin inceleyebildiği ve geliştirebildiği yazılım türü.",
+            az: "Mənbə kodu hər kəsə açıq olan, hər kəsin araşdıra və inkişaf etdirə bildiyi proqram növü."
+        },
+        category: "General"
+    },
+    {
+        term: "Database Index",
+        desc: {
+            en: "A data structure that improves the speed of data retrieval operations on a database table.",
+            tr: "Veritabanındaki verilere çok daha hızlı erişmek için oluşturulan özel bir dizin/rehber yapısı.",
+            az: "Verilənlər bazasındakı məlumatlara daha sürətli daxil olmaq üçün yaradılan xüsusi indeks strukturu."
+        },
+        category: "Database"
+    },
+    {
+        term: "Responsive Design",
+        desc: {
+            en: "A web design approach that makes web pages render well on a variety of devices and window or screen sizes.",
+            tr: "Web sitelerinin telefon, tablet ve bilgisayar gibi farklı ekran boyutlarına uyumlu olması tasarımı.",
+            az: "Veb saytların telefon, tablet və kompüter kimi fərqli ekran ölçülərinə uyğun olması dizaynı."
+        },
+        category: "Frontend"
+    },
+    {
+        term: "DOM (Document Object Model)",
+        desc: {
+            en: "A tree-like representation of the HTML structure of a webpage that allows JavaScript to manipulate content.",
+            tr: "Bir web sayfasının HTML yapısının ağaç benzeri temsili. JavaScript'in sayfayı değiştirmesine olanak tanır.",
+            az: "Bir veb səhifənin HTML strukturunun ağacvari təsviri. JavaScript-ə səhifəni dəyişdirmək imkanı verir."
+        },
+        category: "Frontend"
+    },
+    {
+        term: "JSON (JavaScript Object Notation)",
+        desc: {
+            en: "A lightweight format for storing and transporting data, easy for humans to read and write.",
+            tr: "Veri depolamak ve taşımak için kullanılan hafif bir format. Okunması ve yazılması kolaydır.",
+            az: "Məlumatları saxlamaq və ötürmək üçün istifadə olunan yüngül format. Oxunması və yazılması asandır."
+        },
+        category: "General"
+    },
+    {
+        term: "Full Stack",
+        desc: {
+            en: "A developer who can work on both the frontend (client-side) and backend (server-side) of an application.",
+            tr: "Bir uygulamanın hem ön yüzünde (istemci) hem de arka yüzünde (sunucu) çalışabilen geliştirici.",
+            az: "Bir tətbiqin həm ön tərəfində (müştəri), həm də arxa tərəfində (server) işləyə bilən proqramçı."
+        },
+        category: "General"
+    },
+    {
+        term: "Version Control (Git)",
+        desc: {
+            en: "A system that records changes to a file or set of files over time so that you can recall specific versions later.",
+            tr: "Dosyalar üzerinde yapılan değişiklikleri kaydeden ve eski sürümlere dönmeyi sağlayan sistem (Örn: Git).",
+            az: "Fayllar üzərində edilən dəyişiklikləri qeyd edən və köhnə versiyalara qayıtmağı təmin edən sistem (Məs: Git)."
+        },
+        category: "DevOps"
+    },
+    {
+        term: "MVP (Minimum Viable Product)",
+        desc: {
+            en: "A version of a product with just enough features to be usable by early customers.",
+            tr: "Bir ürünün, ilk kullanıcılar tarafından kullanılabilecek kadar özelliğe sahip en basit, çalışır hali.",
+            az: "Bir məhsulun, ilk istifadəçilər tərəfindən istifadə edilə biləcək qədər xüsusiyyətə sahib ən sadə, işlək halı."
+        },
+        category: "Product"
+    },
+    {
+        term: "Cache (Caching)",
+        desc: {
+            en: "Storing copies of data in a temporary storage location so it can be accessed faster.",
+            tr: "Verilerin daha hızlı erişilebilmesi için geçici bir depolama alanında (önbellek) saklanması.",
+            az: "Məlumatların daha sürətli əldə edilməsi üçün müvəqqəti yaddaşda (keş) saxlanılması."
+        },
+        category: "Performance"
+    },
+    {
+        term: "Latency",
+        desc: {
+            en: "The time delay between sending a request and receiving a response.",
+            tr: "Bir istek gönderilmesi ile cevabın alınması arasında geçen süre (gecikme süresi).",
+            az: "Bir sorğu göndərilməsi ilə cavabın alınması arasında keçən vaxt (gecikmə müddəti)."
+        },
+        category: "Network"
+    },
+    {
+        term: "Bug",
+        desc: {
+            en: "An error, flaw, or fault in a computer program that causes it to produce an incorrect result.",
+            tr: "Bilgisayar programında hatalı veya beklenmedik sonuçlara yol açan kusur/hata.",
+            az: "Kompüter proqramında xətalı və ya gözlənilməz nəticələrə səbəb olan qüsur/xəta."
+        },
+        category: "General"
+    },
+    {
+        term: "Refactoring",
+        desc: {
+            en: "The process of restructuring existing computer code without changing its external behavior.",
+            tr: "Mevcut kodun dış davranışını değiştirmeden, yapısını ve okunabilirliğini iyileştirme süreci.",
+            az: "Mövcud kodun xarici davranışını dəyişdirmədən, strukturunu və oxunaqlığını yaxşılaşdırma prosesi."
+        },
+        category: "General"
+    },
+    {
+        term: "ORM (Object-Relational Mapping)",
+        desc: {
+            en: "A technique that lets you query and manipulate data from a database using an object-oriented paradigm.",
+            tr: "Veritabanı işlemlerini SQL yazmadan, kod içindeki nesnelerle yapmayı sağlayan teknik.",
+            az: "Verilənlər bazası əməliyyatlarını SQL yazmadan, kod daxilindəki obyektlərlə etməyi təmin edən texnika."
+        },
+        category: "Backend"
+    },
+    {
+        term: "Authentication (AuthN)",
+        desc: {
+            en: "The process of verifying who a user is (e.g., logging in with a password).",
+            tr: "Kullanıcının kim olduğunu doğrulama süreci (Örn: Şifre ile giriş yapma).",
+            az: "İstifadəçinin kim olduğunu təsdiqləmə prosesi (Məs: Şifrə ilə giriş etmək)."
+        },
+        category: "Security"
+    },
+    {
+        term: "Authorization (AuthZ)",
+        desc: {
+            en: "The process of verifying what a user has access to (e.g., admin vs. user permissions).",
+            tr: "Kullanıcının nelere erişim yetkisi olduğunu doğrulama süreci (İzinler).",
+            az: "İstifadəçinin nələrə giriş icazəsi olduğunu yoxlama prosesi (İcazələr)."
+        },
+        category: "Security"
+    },
+    {
+        term: "Load Balancer",
+        desc: {
+            en: "A device that acts as a reverse proxy and distributes network or application traffic across a number of servers.",
+            tr: "Ağ trafiğini birden fazla sunucuya eşit şekilde dağıtarak sistemin çökmesini engelleyen yapı.",
+            az: "Şəbəkə trafikini bir neçə server arasında bərabər paylayaraq sistemin çökməsinin qarşısını alan struktur."
+        },
+        category: "DevOps"
+    },
+    {
+        term: "CDN (Content Delivery Network)",
+        desc: {
+            en: "A geographically distributed group of servers which work together to provide fast delivery of Internet content.",
+            tr: "İçerikleri (resim, video vb.) kullanıcının konumuna en yakın sunucudan sunarak hızı artıran sistem.",
+            az: "Məzmunları (şəkil, video və s.) istifadəçinin mövqeyinə ən yaxın serverdən təqdim edərək sürəti artıran sistem."
+        },
+        category: "Network"
+    },
+    {
+        term: "REST (Representational State Transfer)",
+        desc: {
+            en: "An architectural style for providing standards between computer systems on the web.",
+            tr: "Web üzerindeki bilgisayar sistemleri arasında iletişim standartlarını belirleyen bir mimari stil.",
+            az: "Veb üzərindəki kompüter sistemləri arasında əlaqə standartlarını müəyyən edən bir arxitektura stili."
+        },
+        category: "Backend"
+    },
+    {
+        term: "SaaS (Software as a Service)",
+        desc: {
+            en: "A software distribution model in which a third-party provider hosts applications (e.g., Google Drive, Slack).",
+            tr: "Yazılımın internet üzerinden hizmet olarak sunulduğu model (Örn: Netflix, Spotify).",
+            az: "Proqram təminatının internet üzərindən xidmət olaraq təqdim edildiyi model (Məs: Netflix, Spotify)."
+        },
+        category: "General"
+    },
+    {
+        term: "Framework",
+        desc: {
+            en: "A platform for developing software applications that provides a foundation on which developers can build programs.",
+            tr: "Geliştiricilere hazır bir yapı sunan ve kuralları olan yazılım iskeleti (Örn: React, Angular, Django).",
+            az: "Proqramçılara hazır bir struktur təqdim edən və qaydaları olan proqram skeleti (Məs: React, Laravel)."
+        },
+        category: "General"
+    },
+    {
+        term: "Library",
+        desc: {
+            en: "A collection of pre-written code that developers can use to optimize tasks.",
+            tr: "Belirli görevleri yapmak için yazılmış hazır kod parçacıkları koleksiyonu (Örn: Lodash).",
+            az: "Müəyyən tapşırıqları yerinə yetirmək üçün yazılmış hazır kod parçaları toplusu (Məs: React, jQuery)."
+        },
+        category: "General"
+    },
+    {
+        term: "Recursion",
+        desc: {
+            en: "A programming technique where a function calls itself to solve a problem.",
+            tr: "Bir fonksiyonun bir problemi çözmek için kendi kendini çağırması tekniği.",
+            az: "Bir funksiyanın bir problemi həll etmək üçün öz-özünü çağırması texnikası."
+        },
+        category: "CS Fundamentals"
+    },
+    {
+        term: "Debugging",
+        desc: {
+            en: "The process of finding and resolving bugs (defects or problems) within computer programs.",
+            tr: "Yazılımdaki hataları bulma ve düzeltme süreci.",
+            az: "Proqram təminatındakı xətaları tapma və düzəltmə prosesi."
+        },
+        category: "General"
+    },
+    {
+        term: "IDE (Integrated Development Environment)",
+        desc: {
+            en: "Software used by developers to build applications, combining tools like editor, debugger, and compiler (e.g., VS Code).",
+            tr: "Kod yazmak, test etmek ve derlemek için kullanılan gelişmiş yazılım ortamı (Örn: VS Code, IntelliJ).",
+            az: "Kod yazmaq, test etmək və derləmək üçün istifadə olunan inkişaf etmiş proqram mühiti (Məs: VS Code)."
+        },
+        category: "Tools"
+    },
+    {
+        term: "Agile",
+        desc: {
+            en: "A project management methodology used in software development that prioritizes flexibility and speed.",
+            tr: "Yazılım geliştirmede esnekliği ve hızı önceliklendiren proje yönetim metodolojisi.",
+            az: "Proqram inkişafında elastikliyi və sürəti üstün tutan layihə idarəetmə metodologiyası."
+        },
+        category: "Management"
+    },
+    {
+        term: "Scrum",
+        desc: {
+            en: "A specific Agile framework for managing complex knowledge work, with an initial emphasis on software development.",
+            tr: "Agile prensiplerine dayalı, işi 'Sprint' denilen kısa döngülere bölen bir çalışma çerçevesi.",
+            az: "Agile prinsiplərinə əsaslanan, işi 'Sprint' adlanan qısa dövrlərə bölən bir iş çərçivəsi."
+        },
+        category: "Management"
+    },
+    {
+        term: "Web Server",
+        desc: {
+            en: "Computer software and underlying hardware that accepts requests via HTTP and serves static content.",
+            tr: "İnternet üzerinden gelen isteklere (HTTP) cevap veren ve web sitelerini yayınlayan bilgisayar/yazılım.",
+            az: "İnternet üzərindən gələn sorğulara (HTTP) cavab verən və veb saytları yayımlayan kompüter/proqram."
+        },
+        category: "Network"
+    },
+    {
+        term: "IP Address",
+        desc: {
+            en: "A unique address that identifies a device on the internet or a local network.",
+            tr: "İnternete bağlı her cihazın kimliği olan benzersiz sayısal adres.",
+            az: "İnternetə qoşulan hər bir cihazın şəxsiyyəti olan unikal rəqəmsal ünvan."
+        },
+        category: "Network"
+    },
+    {
+        term: "DNS (Domain Name System)",
+        desc: {
+            en: "The phonebook of the Internet. It translates domain names (google.com) to IP addresses.",
+            tr: "İnternetin telefon rehberi. Alan adlarını (google.com) IP adreslerine çevirir.",
+            az: "İnternetin telefon kitabçası. Domen adlarını (google.com) IP ünvanlarına çevirir."
+        },
+        category: "Network"
+    },
+    {
+        term: "Cookie",
+        desc: {
+            en: "A small piece of data sent from a website and stored on the user's computer by the user's web browser.",
+            tr: "Tarayıcıda saklanan ve web sitesinin sizi hatırlamasını sağlayan küçük veri dosyası.",
+            az: "Brauzerdə saxlanılan və veb saytın sizi xatırlamasını təmin edən kiçik məlumat faylı."
+        },
+        category: "Frontend"
+    },
+    {
+        term: "Session",
+        desc: {
+            en: "A temporary interactive information interchange between two or more communicating devices.",
+            tr: "Kullanıcının bir siteye girdiği andan çıkana kadar geçen süredeki etkileşim oturumu.",
+            az: "İstifadəçinin bir sayta girdiyi andan çıxana qədər keçən müddətdəki qarşılıqlı əlaqə sessiyası."
+        },
+        category: "Backend"
+    },
+    {
+        term: "HTTPS",
+        desc: {
+            en: "Hypertext Transfer Protocol Secure. An extension of HTTP that is used for secure communication.",
+            tr: "HTTP'nin şifrelenmiş ve güvenli versiyonu (Yeşil kilit simgesi).",
+            az: "HTTP-nin şifrələnmiş və təhlükəsiz versiyası (Yaşıl qıfıl işarəsi)."
+        },
+        category: "Security"
+    },
+    {
+        term: "Microservices",
+        desc: {
+            en: "An architectural style where an application is structured as a collection of small, independent services.",
+            tr: "Uygulamanın küçük, bağımsız ve birbirleriyle konuşan parçalara bölündüğü mimari.",
+            az: "Tətbiqin kiçik, müstəqil və bir-biri ilə əlaqə quran hissələrə bölündüyü arxitektura."
+        },
+        category: "Backend"
+    },
+    {
+        term: "Container (Docker)",
+        desc: {
+            en: "A standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably.",
+            tr: "Kodun ve çalışması için gereken her şeyin paketlendiği izole ortam.",
+            az: "Kodun və işləməsi üçün lazım olan hər şeyin paketləndiyi izolyasiya edilmiş mühit."
+        },
+        category: "DevOps"
+    },
+    {
+        term: "Kubernetes",
+        desc: {
+            en: "An open-source system for automating deployment, scaling, and management of containerized applications.",
+            tr: "Konteynırlaştırılmış uygulamaları yönetmek, ölçeklemek ve dağıtmak için kullanılan sistem.",
+            az: "Konteynerləşdirilmiş tətbiqləri idarə etmək, miqyaslamaq və paylamaq üçün istifadə olunan sistem."
+        },
+        category: "DevOps"
+    },
+    {
+        term: "Tech Debt (Technical Debt)",
+        desc: {
+            en: "The implied cost of additional rework caused by choosing an easy solution now instead of using a better approach that would take longer.",
+            tr: "Hızlı çözüm uğruna kötü kod yazmanın ileride yaratacağı ekstra iş yükü maliyeti.",
+            az: "Sürətli həll naminə pis kod yazmağın gələcəkdə yaradacağı əlavə iş yükü xərci."
+        },
+        category: "General"
+    },
+    {
+        term: "Variable",
+        desc: {
+            en: "A container for storing data values.",
+            tr: "Veri değerlerini saklamak için kullanılan bir kap/isim.",
+            az: "Məlumat dəyərlərini saxlamaq üçün istifadə olunan bir qab/ad."
+        },
+        category: "CS Fundamentals"
+    },
+    {
+        term: "Array",
+        desc: {
+            en: "A data structure consisting of a collection of elements, each identified by an array index or key.",
+            tr: "Birden fazla veriyi tek bir değişken altında sıralı olarak tutan veri yapısı (Dizi).",
+            az: "Birdən çox məlumatı tək bir dəyişən altında sıralı olaraq saxlayan məlumat strukturu (Massiv)."
+        },
+        category: "CS Fundamentals"
+    },
+    {
+        term: "Query",
+        desc: {
+            en: "A request for data or information from a database table or combination of tables.",
+            tr: "Veritabanından bilgi istemek için yazılan komut/istek.",
+            az: "Verilənlər bazasından məlumat istəmək üçün yazılan əmr/sorğu."
+        },
+        category: "Database"
+    },
+    {
+        term: "Endpoint",
+        desc: {
+            en: "One end of a communication channel. When an API interacts with another system, the touchpoints of this communication are considered endpoints.",
+            tr: "API'ye istek atılan belirli bir URL adresi (Varış noktası).",
+            az: "API-yə sorğu göndərilən müəyyən bir URL ünvanı (Son nöqtə)."
+        },
+        category: "Backend"
+    },
+    {
+        term: "Production (Prod)",
+        desc: {
+            en: "The environment where software is actually run and used by end users.",
+            tr: "Yazılımın gerçek kullanıcılar tarafından kullanıldığı canlı ortam.",
+            az: "Proqramın real istifadəçilər tərəfindən istifadə edildiyi canlı mühit."
+        },
+        category: "General"
+    },
+    {
+        term: "Staging",
+        desc: {
+            en: "An environment for testing that exactly resembles the production environment.",
+            tr: "Canlı ortama (Production) geçmeden önceki son test ortamı.",
+            az: "Canlı mühitə (Production) keçməzdən əvvəlki son test mühiti."
+        },
+        category: "General"
+    },
+    {
+        term: "Responsive",
+        desc: {
+            en: "Design that adjusts gracefully to fit on desktop, tablet, and mobile screens.",
+            tr: "Ekran boyutuna göre otomatik şekil alan esnek tasarım.",
+            az: "Ekran ölçüsünə görə avtomatik şəkil alan elastik dizayn."
+        },
+        category: "Frontend"
+    },
+    {
+        term: "Accessibility (a11y)",
+        desc: {
+            en: "The practice of making your websites usable by as many people as possible, including those with disabilities.",
+            tr: "Web sitelerinin engelli bireyler tarafından da kullanılabilir olması durumu.",
+            az: "Veb saytların əlilliyi olan şəxslər tərəfindən də istifadə edilə bilməsi vəziyyəti."
+        },
+        category: "Frontend"
+    },
+    {
+        term: "Compiler",
+        desc: {
+            en: "A computer program that translates computer code written in one programming language into another language (usually machine code).",
+            tr: "Yazılan kodu bilgisayarın anlayacağı makine diline çeviren program (Derleyici).",
+            az: "Yazılan kodu kompüterin anlayacağı maşın dilinə çevirən proqram (Derləyici)."
+        },
+        category: "CS Fundamentals"
+    },
+    {
+        term: "Interpreter",
+        desc: {
+            en: "A program that directly executes instructions written in a programming or scripting language without requiring them strictly to be compiled.",
+            tr: "Kodu satır satır okuyup anında çalıştıran program (Örn: Python, JS).",
+            az: "Kodu sətir-sətir oxuyub anında işlədən proqram (Məs: Python)."
+        },
+        category: "CS Fundamentals"
+    },
+    {
+        term: "Encryption",
+        desc: {
+            en: "The process of converting information or data into a code, especially to prevent unauthorized access.",
+            tr: "Veriyi yetkisiz kişilerin okuyamayacağı şekilde şifreleme işlemi.",
+            az: "Məlumatı icazəsiz şəxslərin oxuya bilməyəcəyi şəkildə şifrələmə əməliyyatı."
+        },
+        category: "Security"
+    },
+    {
+        term: "Firewall",
+        desc: {
+            en: "A network security system that monitors and controls incoming and outgoing network traffic.",
+            tr: "Ağ trafiğini denetleyen ve zararlı girişleri engelleyen güvenlik duvarı.",
+            az: "Şəbəkə trafikini yoxlayan və zərərli girişləri əngəlləyən təhlükəsizlik divarı."
+        },
+        category: "Security"
+    },
+    {
+        term: "Unit Testing",
+        desc: {
+            en: "A software testing method by which individual units of source code are tested to determine whether they are fit for use.",
+            tr: "Kodun en küçük birimlerinin (fonksiyonların) tek tek test edilmesi.",
+            az: "Kodun ən kiçik vahidlərinin (funksiyaların) tək-tək test edilməsi."
+        },
+        category: "Testing"
+    },
+    {
+        term: "Integration Testing",
+        desc: {
+            en: "A level of software testing where individual units are combined and tested as a group.",
+            tr: "Farklı kod modüllerinin birbiriyle uyumlu çalışıp çalışmadığının test edilmesi.",
+            az: "Fərqli kod modullarının bir-biri ilə uyğun işləyib-işləmədiyinin test edilməsi."
+        },
+        category: "Testing"
+    },
+    {
+        term: "Open Source",
+        desc: {
+            en: "Software for which the original source code is made freely available and may be redistributed and modified.",
+            tr: "Kaynak kodun herkese açık olduğu ve geliştirilebildiği yazılım türü.",
+            az: "Mənbə kodunun hər kəsə açıq olduğu və inkişaf etdirilə bildiyi proqram növü."
+        },
+        category: "General"
+    },
+    {
+        term: "Proprietary Software",
+        desc: {
+            en: "Software that is owned by an individual or a company (closed source).",
+            tr: "Kaynak kodu kapalı olan ve sahibi olan ticari yazılım (Örn: Windows, Photoshop).",
+            az: "Mənbə kodu qapalı olan və sahibi olan ticarət proqramı (Məs: Windows)."
+        },
+        category: "General"
+    },
+    {
+        term: "Scalability",
+        desc: {
+            en: "The property of a system to handle a growing amount of work by adding resources to the system.",
+            tr: "Bir sistemin artan iş yükü altında performans kaybetmeden genişleyebilme yeteneği.",
+            az: "Bir sistemin artan iş yükü altında performans itirmədən genişlənə bilmə qabiliyyəti."
+        },
+        category: "General"
+    }
+];
+
+export const toolOfTheWeek = {
+    id: "notion",
+    title: "Notion",
+    category: { en: "Productivity", tr: "Verimlilik", az: "Məhsuldarlıq" },
+    icon: "📓",
+    desc: {
+        en: "The all-in-one workspace for your notes, tasks, wikis, and databases. Essential for organized developers.",
+        tr: "Notlarınız, görevleriniz, vikileriniz ve veritabanlarınız için hepsi bir arada çalışma alanı. Düzenli yazılımcılar için vazgeçilmez.",
+        az: "Qeydləriniz, tapşırıqlarınız və verilənlər bazalarınız üçün hamısı bir yerdə iş sahəsi. Mütəşəkkil proqramçılar üçün əvəzolunmazdır."
+    },
+    whyCool: {
+        en: "Incredible flexibility with blocks, powerful databases, and massive community templates.",
+        tr: "Bloklarla inanılmaz esneklik, güçlü veritabanları ve devasa topluluk şablonları.",
+        az: "Bloklarla inanılmaz çeviklik, güclü verilənlər bazaları və böyük icma şablonları."
+    },
+    url: "https://www.notion.so"
+};

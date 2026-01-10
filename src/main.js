@@ -1,5 +1,5 @@
 import './style.css'
-import { languages, countries, ui, categories, contentData, globalFaqData, globalResourcesData } from './data.js'
+import { languages, countries, ui, categories, contentData, globalFaqData, globalResourcesData, glossary, toolOfTheWeek } from './data.js'
 
 // State
 const state = {
@@ -55,15 +55,13 @@ const Navbar = () => {
     return `
     <header class="sticky top-0 z-50 glass border-b border-white/10 h-16 flex items-center justify-between px-4 md:px-6">
         <div class="flex items-center gap-4 flex-1">
-            <!-- Mobile Menu Button (Only visible on Category View) -->
-            ${state.view === 'category' ? `
-            <button onclick="window.toggleMobileMenu()" class="md:hidden p-2 text-gray-400 hover:text-white transition-colors">
+            <!-- Mobile Menu Button -->
+            <button onclick="window.toggleMobileMenu()" class="lg:hidden p-2 text-gray-400 hover:text-white transition-colors">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
-            ` : ''}
 
             <button onclick="window.navigateTo('home')" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-cyan to-brand-blue flex items-center justify-center font-bold text-white shadow-lg shadow-brand-blue/20">D</div>
+                <img src="/logo.png" class="w-10 h-10 rounded-xl shadow-lg shadow-brand-blue/20" alt="Logo">
                 <span class="font-bold text-xl tracking-tight hidden md:block">Developer SSS</span>
             </button>
              
@@ -74,6 +72,12 @@ const Navbar = () => {
                 </button>
                 <button onclick="window.navigateTo('resources')" class="text-sm font-medium ${state.view === 'resources' ? 'text-brand-blue' : 'text-gray-400 hover:text-white'} transition-colors">
                     ${t('globalResources')}
+                </button>
+                <button onclick="window.navigateTo('hall-of-fame')" class="text-sm font-medium ${state.view === 'hall-of-fame' ? 'text-brand-cyan' : 'text-gray-400 hover:text-white'} transition-colors">
+                    ${t('hallOfFame')}
+                </button>
+                <button onclick="window.navigateTo('glossary')" class="text-sm font-medium ${state.view === 'glossary' ? 'text-yellow-400' : 'text-gray-400 hover:text-white'} transition-colors">
+                    ${t('glossary')}
                 </button>
              </div>
 
@@ -97,9 +101,9 @@ const Navbar = () => {
 };
 
 const Sidebar = () => {
-    // Desktop Sidebar
-    const desktopSidebar = `
-    <aside class="hidden md:flex flex-col w-72 border-r border-white/10 bg-dark-900/95 backdrop-blur-xl fixed top-16 bottom-0 left-0 overflow-y-auto no-scrollbar z-40">
+    // Desktop Sidebar only
+    return `
+    <aside class="hidden lg:flex flex-col w-72 border-r border-white/10 bg-dark-900/95 backdrop-blur-xl fixed top-16 bottom-0 left-0 overflow-y-auto no-scrollbar z-40">
         <nav class="p-4 space-y-4">
             ${categories.map(cat => `
                 <div class="space-y-1">
@@ -123,49 +127,64 @@ const Sidebar = () => {
         </nav>
     </aside>
     `;
+};
 
-    // Mobile Sidebar (Drawer)
-    const mobileSidebar = `
-    <div onclick="window.toggleMobileMenu()" class="md:hidden fixed inset-0 bg-black/80 z-[60] backdrop-blur-sm transition-opacity ${state.isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}"></div>
-    <aside class="md:hidden fixed top-0 bottom-0 left-0 w-3/4 max-w-sm bg-dark-900 border-r border-white/10 z-[70] transform transition-transform duration-300 ease-in-out ${state.isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} overflow-y-auto">
-        <div class="p-4 border-b border-white/10 flex items-center justify-between">
-            <span class="font-bold text-lg text-white">Categories</span>
-            <button onclick="window.toggleMobileMenu()" class="text-gray-400 hover:text-white">✕</button>
+const MobileMenu = () => {
+    return `
+    <div onclick="window.toggleMobileMenu()" class="lg:hidden fixed inset-0 bg-black/80 z-[60] backdrop-blur-sm transition-opacity ${state.isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}"></div>
+    <aside class="lg:hidden fixed top-0 bottom-0 left-0 w-3/4 max-w-sm bg-dark-900 border-r border-white/10 z-[70] transform transition-transform duration-300 ease-in-out ${state.isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} overflow-y-auto">
+        <div class="p-4 border-b border-white/10 flex items-center justify-between sticky top-0 bg-dark-900 z-10">
+            <div class="flex items-center gap-2">
+                <img src="/logo.png" class="w-8 h-8 rounded-lg" alt="Logo">
+                <span class="font-bold text-lg text-white">Menu</span>
+            </div>
+            <button onclick="window.toggleMobileMenu()" class="text-gray-400 hover:text-white p-2">✕</button>
         </div>
-        <nav class="p-4 space-y-4">
-             ${categories.map(cat => `
-                <div class="space-y-1">
-                    <button onclick="window.navigateToCategory('${cat.id}'); window.toggleMobileMenu()" class="w-full flex items-center gap-3 px-3 py-2 text-left text-gray-300 font-semibold hover:text-white transition-colors">
-                        <span>${cat.icon}</span>
-                        <span>${getLocalizedContent(cat.title)}</span>
-                    </button>
-                    
-                    ${state.currentCategory === cat.id ? `
-                    <div class="pl-9 space-y-1 border-l border-white/5 ml-4">
-                        ${cat.subCategories.length > 0 ? cat.subCategories.map(sub => `
-                            <button onclick="window.navigateToSub('${cat.id}', '${sub.id}'); window.toggleMobileMenu()" 
-                                    class="w-full text-left px-3 py-1.5 text-sm rounded-md transition-all ${state.currentSubCategory === sub.id ? 'bg-brand-blue/10 text-brand-blue font-medium' : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'}">
-                                ${getLocalizedContent(sub.title)}
-                            </button>
-                        `).join('') : ''}
+        <nav class="p-4 space-y-6">
+            <!-- Global Links -->
+            <div class="space-y-2">
+                <button onclick="window.navigateTo('faq'); window.toggleMobileMenu()" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border border-white/5 bg-white/5 text-gray-300 font-medium hover:text-white transition-colors ${state.view === 'faq' ? 'border-brand-purple/50 bg-brand-purple/10 text-brand-purple' : ''}">
+                    <span class="text-lg">📋</span> ${t('globalFaq')}
+                </button>
+                <button onclick="window.navigateTo('resources'); window.toggleMobileMenu()" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border border-white/5 bg-white/5 text-gray-300 font-medium hover:text-white transition-colors ${state.view === 'resources' ? 'border-brand-blue/50 bg-brand-blue/10 text-brand-blue' : ''}">
+                    <span class="text-lg">📚</span> ${t('globalResources')}
+                </button>
+                <button onclick="window.navigateTo('hall-of-fame'); window.toggleMobileMenu()" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border border-white/5 bg-white/5 text-gray-300 font-medium hover:text-white transition-colors ${state.view === 'hall-of-fame' ? 'border-brand-cyan/50 bg-brand-cyan/10 text-brand-cyan' : ''}">
+                    <span class="text-lg">🏆</span> ${t('hallOfFame')}
+                </button>
+                <button onclick="window.navigateTo('glossary'); window.toggleMobileMenu()" class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border border-white/5 bg-white/5 text-gray-300 font-medium hover:text-white transition-colors ${state.view === 'glossary' ? 'border-yellow-500/50 bg-yellow-500/10 text-yellow-400' : ''}">
+                    <span class="text-lg">📖</span> ${t('glossary')}
+                </button>
+            </div>
+
+            <div class="h-px bg-white/5"></div>
+
+            <!-- Categories -->
+            <div class="space-y-1">
+                <h3 class="text-xs uppercase tracking-widest font-bold text-gray-500 px-3 mb-2">Technical Roadmaps</h3>
+                ${categories.map(cat => `
+                    <div class="space-y-1">
+                        <button onclick="window.navigateToCategory('${cat.id}')" class="w-full flex items-center gap-3 px-3 py-2.5 text-left text-gray-300 font-semibold hover:text-white transition-colors">
+                            <span class="text-lg">${cat.icon}</span>
+                            <span>${getLocalizedContent(cat.title)}</span>
+                        </button>
+                        
+                        ${state.currentCategory === cat.id ? `
+                        <div class="pl-10 space-y-1 border-l border-white/10 ml-5">
+                            ${cat.subCategories.length > 0 ? cat.subCategories.map(sub => `
+                                <button onclick="window.navigateToSub('${cat.id}', '${sub.id}'); window.toggleMobileMenu()" 
+                                        class="w-full text-left px-3 py-2 text-sm rounded-lg transition-all ${state.currentSubCategory === sub.id ? 'bg-brand-blue/10 text-brand-blue font-medium' : 'text-gray-500 hover:text-gray-300 hover:bg-white/5'}">
+                                    ${getLocalizedContent(sub.title)}
+                                </button>
+                            `).join('') : ''}
+                        </div>
+                        ` : ''}
                     </div>
-                     ` : ''}
-                </div>
-            `).join('')}
-             
-             <div class="border-t border-white/10 pt-4 mt-4 space-y-2">
-                 <button onclick="window.navigateTo('faq'); window.toggleMobileMenu()" class="w-full text-left px-3 py-2 text-gray-400 hover:text-white text-sm">
-                    ${t('globalFaq')}
-                 </button>
-                  <button onclick="window.navigateTo('resources'); window.toggleMobileMenu()" class="w-full text-left px-3 py-2 text-gray-400 hover:text-white text-sm">
-                    ${t('globalResources')}
-                 </button>
-             </div>
+                `).join('')}
+            </div>
         </nav>
     </aside>
     `;
-
-    return desktopSidebar + mobileSidebar;
 };
 
 const Footer = () => {
@@ -199,7 +218,7 @@ const Footer = () => {
             <!-- Bottom Section -->
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center font-bold text-gray-400">D</div>
+                    <img src="/logo.png" class="w-8 h-8 rounded-lg" alt="Logo">
                     <div>
                          <span class="text-sm font-semibold text-gray-300">Developer SSS</span>
                          <p class="text-xs text-gray-500">© 2026 All rights reserved.</p>
@@ -276,6 +295,203 @@ const LegalPage = (type) => {
     `;
 }
 
+const HallOfFamePage = () => {
+    // Fetch contributors if not already loaded
+    if (!state.contributors && !state.isLoadingContributors) {
+        state.isLoadingContributors = true;
+        fetch('https://api.github.com/repos/TunarJamalov/DeveloperSSS/contributors')
+            .then(res => res.json())
+            .then(data => {
+                state.contributors = Array.isArray(data) ? data : [];
+                state.isLoadingContributors = false;
+                render();
+            })
+            .catch(err => {
+                console.error('Failed to fetch contributors:', err);
+                state.contributors = [];
+                state.isLoadingContributors = false;
+                render();
+            });
+    }
+
+    const contributorsList = state.contributors || [];
+
+    return `
+    <div class="min-h-[calc(100vh-64px)] flex flex-col">
+        <div class="max-w-6xl mx-auto p-6 md:p-12 animate-fade-in flex-1 w-full">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
+                    ${t('hallOfFame')}
+                </h1>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    A special thanks to everyone who contributed to making Developer SSS better.
+                </p>
+            </div>
+
+            ${state.isLoadingContributors ? `
+                <div class="flex flex-col items-center justify-center p-20">
+                    <div class="w-12 h-12 border-4 border-brand-blue border-t-transparent rounded-full animate-spin mb-4"></div>
+                    <p class="text-gray-500">Loading heroes...</p>
+                </div>
+            ` : `
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    ${contributorsList.map(c => `
+                        <a href="${c.html_url}" target="_blank" class="glass-card p-6 flex flex-col items-center text-center group hover:border-brand-cyan/50 transition-all hover:-translate-y-2">
+                            <div class="relative mb-4">
+                                <img src="${c.avatar_url}" class="w-20 h-20 rounded-full border-2 border-white/10 group-hover:border-brand-cyan transition-colors shadow-2xl" alt="${c.login}">
+                                <div class="absolute -bottom-1 -right-1 bg-brand-cyan text-black text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg">
+                                    ${c.contributions}
+                                </div>
+                            </div>
+                            <h3 class="font-bold text-white group-hover:text-brand-cyan transition-colors mb-1 truncate w-full text-base">
+                                ${c.login}
+                            </h3>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">Contributor</p>
+                        </a>
+                    `).join('')}
+                    
+                    <!-- Contribution Invitation -->
+                    <a href="https://github.com/TunarJamalov/DeveloperSSS" target="_blank" class="glass-card p-6 flex flex-col items-center justify-center text-center border-dashed border-white/20 hover:border-brand-purple/50 transition-all hover:-translate-y-2 group">
+                        <div class="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+                            ✨
+                        </div>
+                        <h3 class="font-bold text-gray-400 group-hover:text-brand-purple transition-colors mb-2">You?</h3>
+                        <p class="text-[10px] text-gray-500 uppercase tracking-widest">Join Us on GitHub</p>
+                    </a>
+                </div>
+            `}
+        </div>
+        ${Footer()}
+    </div>
+    `;
+}
+
+const renderGlossaryList = (searchTerm) => {
+    const filteredTerms = glossary.filter(item =>
+        item.term.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        getLocalizedContent(item.desc).toLowerCase().includes(searchTerm.toLowerCase())
+    ).sort((a, b) => a.term.localeCompare(b.term));
+
+    if (filteredTerms.length === 0) {
+        return `
+            <div class="text-center p-20 border border-dashed border-white/10 rounded-3xl animate-fade-in">
+                <p class="text-gray-500">No terms found for "<span class="text-white">${searchTerm}</span>"</p>
+            </div>
+        `;
+    }
+
+    return `
+    <div class="columns-1 md:columns-2 gap-8 space-y-8">
+        ${filteredTerms.map(item => `
+            <div class="break-inside-avoid glass-card p-8 border border-white/10 hover:border-yellow-500/30 transition-all group animate-fade-in">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl font-extrabold text-white group-hover:text-yellow-400 transition-colors">
+                        ${item.term}
+                    </h3>
+                    <span class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-white/5 text-gray-500 border border-white/5">
+                        ${item.category}
+                    </span>
+                </div>
+                <p class="text-gray-400 leading-relaxed text-sm">
+                    ${getLocalizedContent(item.desc)}
+                </p>
+            </div>
+        `).join('')}
+    </div>
+    `;
+};
+
+const GlossaryPage = () => {
+    const searchTerm = state.glossarySearch || '';
+
+    return `
+    <div class="min-h-[calc(100vh-64px)] flex flex-col">
+        <div class="max-w-5xl mx-auto p-6 md:p-12 animate-fade-in flex-1 w-full">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
+                    ${t('glossary')}
+                </h1>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Master the technical language of the tech world. Simple explanations for complex terms.
+                </p>
+            </div>
+
+            <!-- Search Area -->
+            <div class="relative max-w-2xl mx-auto mb-16 group">
+                <input type="text" 
+                       id="glossary-search-input"
+                       value="${searchTerm.replace(/"/g, '&quot;')}"
+                       oninput="window.handleGlossarySearch(this.value)"
+                       placeholder="Search terms (e.g. API, Docker, Middleware...)" 
+                       class="w-full glass p-5 pl-14 rounded-2xl text-lg focus:outline-none focus:border-yellow-500/50 border border-white/10 shadow-2xl transition-all placeholder-gray-500 text-white bg-dark-900/80 backdrop-blur-xl">
+                <div class="absolute left-5 top-5 text-2xl text-gray-400 group-focus-within:text-yellow-400">📖</div>
+            </div>
+
+            <div id="glossary-results-container">
+                ${renderGlossaryList(searchTerm)}
+            </div>
+        </div>
+        ${Footer()}
+    </div>
+    `;
+};
+
+window.renderGlossaryListHelper = renderGlossaryList;
+
+const ToolOfTheWeek = () => {
+    return `
+    <div class="max-w-7xl mx-auto px-4 mb-20 relative z-20 animate-fade-in">
+        <div class="relative group">
+            <!-- Background Glow -->
+            <div class="absolute -inset-1 bg-gradient-to-r from-brand-blue to-brand-purple rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+            
+            <div class="relative glass-card p-8 md:p-10 border border-white/10 overflow-hidden">
+                <div class="absolute top-0 right-0 p-10 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <span class="text-8xl md:text-9xl">${toolOfTheWeek.icon}</span>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-8 items-start relative z-10">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-3 py-1 rounded-full bg-brand-blue/20 text-brand-blue text-[10px] font-bold uppercase tracking-widest border border-brand-blue/30">
+                                ✨ ${t('toolOfTheWeek')}
+                            </span>
+                            <span class="text-gray-500 text-[10px] font-bold uppercase tracking-widest">
+                                ${getLocalizedContent(toolOfTheWeek.category)}
+                            </span>
+                        </div>
+                        
+                        <h2 class="text-3xl md:text-5xl font-black text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-blue transition-all">
+                            ${toolOfTheWeek.title}
+                        </h2>
+                        
+                        <p class="text-lg text-gray-300 mb-6 max-w-2xl leading-relaxed">
+                            ${getLocalizedContent(toolOfTheWeek.desc)}
+                        </p>
+                        
+                        <div class="flex flex-wrap items-center gap-6">
+                            <a href="${toolOfTheWeek.url}" target="_blank" class="px-8 py-3 rounded-xl bg-white text-black font-bold hover:bg-brand-blue hover:text-white transition-all shadow-xl shadow-white/5 active:scale-95">
+                                ${t('viewTool')}
+                            </a>
+                            <div class="flex flex-col">
+                                <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1 italic">Pro Tip:</span>
+                                <p class="text-sm text-gray-400 max-w-xs border-l-2 border-brand-purple/50 pl-3">
+                                    ${getLocalizedContent(toolOfTheWeek.whyCool)}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full md:w-auto flex flex-col gap-3">
+                        <!-- Extra badges or info could go here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+};
+
 const LandingPage = () => {
     return `
     <div class="min-h-[calc(100vh-64px)] flex flex-col pt-10 relative overflow-hidden">
@@ -310,6 +526,8 @@ const LandingPage = () => {
                 </button>
              </div>
         </div>
+
+        ${ToolOfTheWeek()}
 
         <!-- Bento Grid Categories: z-10 ensures it stays BELOW search -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl w-full mx-auto relative z-10 px-4 pb-20 flex-1">
@@ -410,7 +628,22 @@ window.handleSearch = (query) => {
         });
     });
 
-    // 3. Render Results
+    // 3. Search Glossary
+    glossary.forEach(item => {
+        const term = item.term.toLowerCase();
+        const desc = getLocalizedContent(item.desc).toLowerCase();
+        if (term.includes(q) || desc.includes(q)) {
+            matches.push({
+                type: 'glossary',
+                icon: '📖',
+                title: item.term,
+                desc: getLocalizedContent(item.desc),
+                onclick: `window.navigateTo('glossary'); state.glossarySearch = '${item.term}'; render();`
+            });
+        }
+    });
+
+    // 4. Render Results
     if (matches.length === 0) {
         resultsContainer.innerHTML = `
             <div class="p-4 text-center text-gray-500">
@@ -731,6 +964,137 @@ const CategoryDetail = () => {
          `;
     };
 
+    const renderInterview = () => {
+        const questions = data.interview || [];
+        if (questions.length === 0) return `
+             <div class="flex flex-col items-center justify-center p-12 text-center border border-dashed border-white/10 rounded-xl bg-white/5">
+                <span class="text-4xl mb-4">🧩</span>
+                <h3 class="text-xl font-bold text-white mb-2">${t('comingSoon')}</h3>
+                <p class="text-gray-500">Interview questions for this category are being prepared.</p>
+            </div>
+        `;
+
+        // Manage random state to prevent re-shuffle on flip
+        if (state.currentInterviewSub !== sub.id || !state.interviewQuestions) {
+            state.interviewQuestions = [...questions].sort(() => 0.5 - Math.random()).slice(0, 5);
+            state.currentInterviewSub = sub.id;
+        }
+
+        return `
+            <div class="space-y-6">
+                
+                <div class="p-4 rounded-xl bg-gradient-to-r from-brand-blue/10 to-transparent border border-brand-blue/20 text-blue-200 text-sm flex items-center gap-3">
+                    <span class="text-xl">💡</span>
+                    <div>
+                        <strong>Pro Tip:</strong> Questions are randomized. Click the card to reveal the answer.
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-12">
+                    ${state.interviewQuestions.map(item => `
+                        <div class="group h-64 [perspective:1000px] cursor-pointer" onclick="this.querySelector('.flip-inner').classList.toggle('[transform:rotateY(180deg)]')">
+                            <div class="flip-inner relative w-full h-full transition-all duration-500 [transform-style:preserve-3d]">
+                                <!-- Front -->
+                                <div class="absolute inset-0 w-full h-full bg-dark-900 border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-xl [backface-visibility:hidden]">
+                                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-2xl mb-4 border border-white/10 group-hover:border-brand-blue/50 transition-colors">
+                                        ❓
+                                    </div>
+                                    <h3 class="text-lg font-bold text-white leading-snug">
+                                        ${getLocalizedContent(item.q)}
+                                    </h3>
+                                    <p class="absolute bottom-4 text-xs text-gray-500 uppercase tracking-widest font-semibold flex items-center gap-1 opacity-60">
+                                        Tap to Reveal
+                                    </p>
+                                </div>
+
+                                <!-- Back -->
+                                <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-brand-blue/20 to-dark-900 border border-brand-blue/30 rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-xl [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                                    <div class="w-8 h-8 rounded-full bg-brand-blue/20 flex items-center justify-center text-sm mb-3 text-brand-blue border border-brand-blue/30">
+                                        ✓
+                                    </div>
+                                    <p class="text-gray-200 text-sm leading-relaxed overflow-y-auto max-h-[160px] custom-scrollbar">
+                                        ${getLocalizedContent(item.a)}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div class="flex justify-center pb-12">
+                    <button onclick="window.shuffleQuestions()" class="flex items-center gap-2 px-8 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold transition-all hover:scale-105 active:scale-95 group">
+                        <span class="group-hover:rotate-180 transition-transform duration-500">🎲</span>
+                        Shuffle Questions
+                    </button>
+                </div>
+            </div>
+        `;
+    };
+
+    const renderProjects = () => {
+        const projects = data.projects || [];
+        if (projects.length === 0) return `
+             <div class="flex flex-col items-center justify-center p-12 text-center border border-dashed border-white/10 rounded-xl bg-white/5">
+                <span class="text-4xl mb-4">🚀</span>
+                <h3 class="text-xl font-bold text-white mb-2">${t('comingSoon')}</h3>
+                <p class="text-gray-500">Project ideas for this category are on the way.</p>
+            </div>
+        `;
+
+        const getLevelColor = (level) => {
+            switch (level) {
+                case 'junior': return 'bg-green-500/10 text-green-400 border-green-500/20';
+                case 'mid': return 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20';
+                case 'expert': return 'bg-red-500/10 text-red-400 border-red-500/20';
+                default: return 'bg-gray-500/10 text-gray-400 border-gray-500/20';
+            }
+        };
+
+        return `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-12">
+                ${projects.map(p => `
+                    <div class="glass-card p-6 flex flex-col h-full group hover:border-brand-blue/30 transition-all">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider border ${getLevelColor(p.level)}">
+                                ${p.level}
+                            </span>
+                            <div class="text-2xl group-hover:scale-110 transition-transform">💡</div>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-blue transition-colors">
+                            ${getLocalizedContent(p.title)}
+                        </h3>
+                        
+                        <p class="text-gray-400 text-sm mb-6 flex-1">
+                            ${getLocalizedContent(p.desc)}
+                        </p>
+
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-[10px] uppercase tracking-widest font-bold text-gray-500 mb-2">Tech Stack</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    ${p.tech.map(t => `<span class="px-2 py-1 rounded bg-white/5 border border-white/10 text-[10px] text-gray-300">${t}</span>`).join('')}
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-[10px] uppercase tracking-widest font-bold text-gray-500 mb-2">Key Features</h4>
+                                <ul class="space-y-1">
+                                    ${getLocalizedContent(p.features).map(f => `
+                                        <li class="text-xs text-gray-400 flex items-center gap-2">
+                                            <span class="w-1 h-1 rounded-full bg-brand-blue"></span>
+                                            ${f}
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    };
+
     return `
     <div class="flex min-h-[calc(100vh-64px)] relative">
         <div class="hidden md:block w-72 shrink-0"></div>
@@ -751,7 +1115,7 @@ const CategoryDetail = () => {
 
                 <div class="border-b border-white/10 mb-8 overflow-x-auto">
                     <div class="flex space-x-8 min-w-max">
-                        ${['roadmap', 'resources', 'jobs', 'faq'].map(tab => `
+                        ${['roadmap', 'resources', 'jobs', 'faq', 'interview', 'projects'].map(tab => `
                              <button onclick="window.switchTab('${tab}')" 
                                 class="pb-3 text-sm font-medium border-b-2 transition-all capitalize ${state.currentTab === tab ? 'border-brand-blue text-brand-blue' : 'border-transparent text-gray-400 hover:text-white'}">
                             ${t(`tabs.${tab}`)}
@@ -764,19 +1128,21 @@ const CategoryDetail = () => {
                     ${state.currentTab === 'roadmap' ? renderRoadmap() :
             state.currentTab === 'resources' ? renderResources() :
                 state.currentTab === 'jobs' ? renderJobs() :
-                    renderFaq()}
+                    state.currentTab === 'interview' ? renderInterview() :
+                        state.currentTab === 'projects' ? renderProjects() :
+                            renderFaq()}
                 </div>
-            </div>
+            </div >
             
-        </main>
-    </div>
+        </main >
+    </div >
     `;
 };
 
 // Actions
 window.navigateTo = (view) => {
     state.view = view;
-    if (view === 'home' || view === 'faq' || view === 'resources' || view === 'privacy' || view === 'terms') {
+    if (view === 'home' || view === 'faq' || view === 'resources' || view === 'privacy' || view === 'terms' || view === 'hall-of-fame' || view === 'glossary') {
         state.currentCategory = null;
         state.currentSubCategory = null;
         state.isMobileMenuOpen = false;
@@ -821,6 +1187,14 @@ window.setOnboardingData = (lang, country) => {
     render();
 };
 
+window.handleGlossarySearch = (query) => {
+    state.glossarySearch = query;
+    const container = document.getElementById('glossary-results-container');
+    if (container) {
+        container.innerHTML = window.renderGlossaryListHelper(query);
+    }
+};
+
 window.toggleCountry = () => {
     const currentIndex = countries.findIndex(c => c.code === state.country);
     const nextIndex = (currentIndex + 1) % countries.length;
@@ -842,6 +1216,11 @@ window.toggleMobileMenu = () => {
     render();
 }
 
+window.shuffleQuestions = () => {
+    state.interviewQuestions = null;
+    render();
+}
+
 window.clearData = () => {
     localStorage.clear();
     location.reload();
@@ -855,6 +1234,7 @@ const render = () => {
 
     let content = '';
     content += Navbar();
+    content += MobileMenu();
 
     // Decide which page to show based on state.view
     if (state.view === 'home') {
@@ -870,6 +1250,10 @@ const render = () => {
         content += LegalPage('privacy');
     } else if (state.view === 'terms') {
         content += LegalPage('terms');
+    } else if (state.view === 'hall-of-fame') {
+        content += HallOfFamePage();
+    } else if (state.view === 'glossary') {
+        content += GlossaryPage();
     }
 
     app.innerHTML = content;
@@ -877,3 +1261,12 @@ const render = () => {
 
 // Initial Render
 render();
+
+// --- PWA Service Worker Registration ---
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('SW Registered!', reg))
+            .catch(err => console.log('SW Registration failed:', err));
+    });
+}

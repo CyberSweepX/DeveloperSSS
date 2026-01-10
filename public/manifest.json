@@ -1,0 +1,17 @@
+{
+    "name": "Developer SSS",
+    "short_name": "DevSSS",
+    "description": "The Ultimate Developer FAQ & Roadmap Platform",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#09090b",
+    "theme_color": "#3b82f6",
+    "icons": [
+        {
+            "src": "logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
