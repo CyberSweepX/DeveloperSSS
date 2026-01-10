@@ -475,9 +475,9 @@ const ToolOfTheWeek = () => {
             <!-- Background Glow -->
             <div class="absolute -inset-1 bg-gradient-to-r from-brand-blue to-brand-purple rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
             
-            <div class="relative glass-card p-8 md:p-10 border border-white/10 overflow-hidden">
-                <div class="absolute top-0 right-0 p-10 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <span class="text-8xl md:text-9xl">${toolOfTheWeek.icon}</span>
+            <div class="relative glass-card p-6 md:p-10 border border-white/10 overflow-hidden">
+                <div class="absolute top-0 right-0 p-6 md:p-10 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
+                    <span class="text-7xl md:text-9xl">${toolOfTheWeek.icon}</span>
                 </div>
                 
                 <div class="flex flex-col md:flex-row gap-8 items-start relative z-10">
@@ -499,13 +499,13 @@ const ToolOfTheWeek = () => {
                             ${getLocalizedContent(toolOfTheWeek.desc)}
                         </p>
                         
-                        <div class="flex flex-wrap items-center gap-6">
-                            <a href="${toolOfTheWeek.url}" target="_blank" class="px-8 py-3 rounded-xl bg-white text-black font-bold hover:bg-brand-blue hover:text-white transition-all shadow-xl shadow-white/5 active:scale-95">
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
+                            <a href="${toolOfTheWeek.url}" target="_blank" class="px-8 py-3 rounded-xl bg-white text-black font-bold hover:bg-brand-blue hover:text-white transition-all shadow-xl shadow-white/5 active:scale-95 text-center">
                                 ${t('viewTool')}
                             </a>
                             <div class="flex flex-col">
                                 <span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1 italic">Pro Tip:</span>
-                                <p class="text-sm text-gray-400 max-w-xs border-l-2 border-brand-purple/50 pl-3">
+                                <p class="text-sm text-gray-400 max-w-full sm:max-w-xs border-l-2 border-brand-purple/50 pl-3">
                                     ${getLocalizedContent(toolOfTheWeek.whyCool)}
                                 </p>
                             </div>
@@ -1138,7 +1138,7 @@ const CategoryDetail = () => {
                                 ${getLocalizedContent(sub.title)}
                         </h1>
                    </div>
-                   <p class="text-gray-400 text-lg ml-14 border-l-2 border-brand-blue/30 pl-3">
+                   <p class="text-gray-400 text-sm md:text-lg ml-10 md:ml-14 border-l-2 border-brand-blue/30 pl-3">
                         ${getLocalizedContent(cat.title)}
                    </p>
                 </div>
