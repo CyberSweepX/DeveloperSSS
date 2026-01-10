@@ -24,6 +24,36 @@ const getLocalizedContent = (obj) => {
     return obj[state.lang] || obj['en'];
 }
 
+const updateMeta = () => {
+    let title = "Developer SSS | Ultimate Roadmap & Interview Platform";
+    let subTitle = "";
+
+    if (state.view === 'category' && state.currentCategory) {
+        const cat = categories.find(c => c.id === state.currentCategory);
+        if (cat) {
+            subTitle = getLocalizedContent(cat.title);
+            if (state.currentSubCategory) {
+                const sub = cat.subCategories.find(s => s.id === state.currentSubCategory);
+                if (sub) subTitle = `${getLocalizedContent(sub.title)} - ${subTitle}`;
+            }
+        }
+    } else if (state.view === 'faq') subTitle = t('globalFaq');
+    else if (state.view === 'resources') subTitle = t('globalResources');
+    else if (state.view === 'glossary') subTitle = t('glossary');
+    else if (state.view === 'hall-of-fame') subTitle = t('hallOfFame');
+
+    if (subTitle) title = `${subTitle} | Developer SSS`;
+
+    document.title = title;
+
+    // Update OG and Twitter tags dynamically
+    const metaTitle = document.querySelector('meta[name="title"]');
+    if (metaTitle) metaTitle.setAttribute('content', title);
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', title);
+}
+
 // --- Components ---
 
 const Navbar = () => {
@@ -1148,6 +1178,7 @@ window.navigateTo = (view) => {
         state.isMobileMenuOpen = false;
     }
     render(); // Re-render to update UI
+    updateMeta();
     window.scrollTo(0, 0);
 };
 
@@ -1162,6 +1193,7 @@ window.navigateToCategory = (catId) => {
     state.view = 'category';
     state.currentTab = 'roadmap';
     render();
+    updateMeta();
     window.scrollTo(0, 0);
 };
 
@@ -1171,6 +1203,7 @@ window.navigateToSub = (catId, subId) => {
     state.view = 'category';
     state.currentTab = 'roadmap';
     render();
+    updateMeta();
     window.scrollTo(0, 0);
 }
 
