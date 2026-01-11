@@ -1,5 +1,9 @@
 import './style.css'
+import { inject } from '@vercel/analytics'
 import { languages, countries, ui, categories, contentData, globalFaqData, globalResourcesData, glossary, toolOfTheWeek } from './data.js'
+
+// Initialize Vercel Analytics
+inject();
 
 // State
 const state = {

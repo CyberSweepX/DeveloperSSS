@@ -1698,6 +1698,8 @@ contentData['frontend'] = {
             }
         }
     ],
+
+    // 5. INTERVIEW PREP
     interview: [
         {
             id: 1,
@@ -1961,7 +1963,7 @@ contentData['frontend'] = {
         }
     ],
 
-    // 5. PROJE FİKİRLERİ (PROJECT HUB)
+    // 6. PROJECT HUB
     projects: [
         {
             id: 1,
@@ -2151,7 +2153,7 @@ contentData['backend'] = {
         }
     ],
 
-    // 5. MÜLAKAT SORULARI (INTERVIEW PREP)
+    // 5. INTERVIEW PREP
     interview: [
         {
             id: 1,
@@ -2415,7 +2417,7 @@ contentData['backend'] = {
         }
     ],
 
-    // 5. PROJE FİKİRLERİ (PROJECT HUB)
+    // 6. PROJECT HUB
     projects: [
         {
             id: 1,
