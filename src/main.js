@@ -421,24 +421,32 @@ const renderGlossaryList = (searchTerm) => {
     }
 
     return `
-    <div class="columns-1 md:columns-2 gap-8 space-y-8">
-        ${filteredTerms.map(item => `
-            <div class="break-inside-avoid glass-card p-8 border border-white/10 hover:border-yellow-500/30 transition-all group animate-fade-in">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-xl font-extrabold text-white group-hover:text-yellow-400 transition-colors">
-                        ${item.term}
-                    </h3>
-                    <span class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded bg-white/5 text-gray-500 border border-white/5">
-                        ${item.category}
-                    </span>
-                </div>
-                <p class="text-gray-400 leading-relaxed text-sm">
-                    ${getLocalizedContent(item.desc)}
-                </p>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-stretch">
+    ${filteredTerms.map(item => `
+        <div class="h-full glass-card p-8 border border-white/10
+                    hover:border-yellow-500/30 transition-all
+                    group animate-fade-in flex flex-col">
+            
+            <div class="flex items-start justify-between mb-4">
+                <h3 class="text-xl font-extrabold text-white 
+                           group-hover:text-yellow-400 transition-colors">
+                    ${item.term}
+                </h3>
+                <span class="text-[10px] font-bold uppercase tracking-widest 
+                             px-2 py-1 rounded bg-white/5 text-gray-500 
+                             border border-white/5">
+                    ${item.category}
+                </span>
             </div>
-        `).join('')}
-    </div>
-    `;
+
+            <p class="text-gray-400 leading-relaxed text-sm flex-1">
+                ${getLocalizedContent(item.desc)}
+            </p>
+        </div>
+    `).join('')}
+</div>
+`;
+
 };
 
 const GlossaryPage = () => {
