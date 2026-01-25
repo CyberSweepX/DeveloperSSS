@@ -339,6 +339,7 @@ contentData['android'] = {
     ]
 };
 
+
 contentData['devops'] = {
     // 1. ROADMAP
     roadmap: {
@@ -1696,7 +1697,7 @@ contentData['frontend'] = {
                 az: "Mütləq bəli! Müasir iş elanlarının 80%-i artıq sadə JavaScript əvəzinə TypeScript biliyi tələb edir.",
                 en: "Absolutely yes! 80% of modern job postings now require TypeScript instead of plain JavaScript."
             }
-        }
+        },
     ],
 
     // 5. INTERVIEW PREP
@@ -1988,7 +1989,7 @@ contentData['frontend'] = {
             desc: { tr: "Canlı verilerle (WebSocket) güncellenen, grafik kütüphaneleri içeren dashboard.", az: "WebSocket istifadə edərək canlı kripto qiymətlərini göstərən tablov.", en: "Real-time dashboard with charts using live data (WebSockets)." },
             tech: ["Next.js", "Chart.js/D3.js", "WebSocket", "Framer Motion"],
             features: { tr: ["Canlı fiyat grafikleri", "Kâr/Zarar hesaplayıcı", "Mobil uyumlu tasarım"], az: ["Canlı qiymət qrafikləri", "Mənfəət/Zərər hesablama", "Animasiyalar"], en: ["Live price charts", "P&L calculator", "Smooth animations"] }
-        }
+        },
     ]
 };
 
@@ -2601,6 +2602,7 @@ contentData['fullstack'] = {
             }
         }
     ]
+
 };
 
 contentData['cloud'] = {
@@ -3442,7 +3444,7 @@ export const globalFaqData = [
                     az: 'Proqramın yaranmasından sonuna qədər olan prosesdir: Planlama -> Analiz -> Dizayn -> Kodlama -> Test -> Baxım. Bu dövr peşəkar layihələrin təməlidir.',
                     en: 'It is the process from the birth to the death of software: Planning -> Analysis -> Design -> Coding -> Testing -> Maintenance. This cycle is the foundation of professional projects.'
                 }
-            }
+            },
         ]
     },
     {
