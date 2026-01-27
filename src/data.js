@@ -599,6 +599,33 @@ contentData['android'] = {
             en: "Used to represent restricted class hierarchies. Each subclass can have its own properties, making it more powerful than Enums for handling states."
         }
     }
+],
+
+projects: [
+    {
+        id: 1,
+        level: "junior",
+        title: { tr: "Akıllı Not Defteri", az: "Ağıllı Qeyd Dəftəri", en: "Smart Note-Taking App" },
+        desc: { tr: "Kullanıcıların notlarını kategorize edip yerel olarak saklayabildiği bir uygulama.", az: "İstifadəçilərin qeydlərini kateqoriyalara ayırıb lokal yadda saxladığı tətbiq.", en: "An app where users can categorize and store notes locally." },
+        tech: ["Kotlin", "Jetpack Compose", "Room Database", "ViewModel"],
+        features: { tr: ["CRUD işlemleri", "Arama filtresi", "SQLite ile yerel depolama"], az: ["CRUD əməliyyatları", "Axtarış filtri", "SQLite ilə lokal yaddaş"], en: ["CRUD operations", "Search filter", "Local storage with SQLite"] }
+    },
+    {
+        id: 2,
+        level: "mid",
+        title: { tr: "Film & Dizi Keşif Platformu", az: "Film və Serial Platforması", en: "Movie Discovery App" },
+        desc: { tr: "Popüler filmleri listeleyen ve detaylı bilgi sunan bir medya uygulaması.", az: "Populyar filmləri sıralayan və ətraflı məlumat təqdim edən media tətbiqi.", en: "A media app listing popular movies and providing detailed information." },
+        tech: ["Retrofit", "Hilt/Koin (DI)", "Paging 3", "Coroutines & Flow"],
+        features: { tr: ["TMDB API entegrasyonu", "Sonsuz kaydırma", "Favorilere ekleme (Offline mod)"], az: ["TMDB API inteqrasiyası", "Sonsuz sürüşdürmə", "Favorilərə əlavə etmə"], en: ["TMDB API integration", "Infinite scrolling", "Offline caching"] }
+    },
+    {
+        id: 3,
+        level: "expert",
+        title: { tr: "Kripto Cüzdan Takibi & Widget", az: "Kripto Pul Qabı İzləyicisi", en: "Crypto Wallet Tracker" },
+        desc: { tr: "Canlı fiyat takibi yapan ve ana ekran widget desteği sunan kompleks uygulama.", az: "Canlı qiymət izləyən və ana ekran vidcet dəstəyi olan kompleks tətbiq.", en: "Complex app with live price tracking and home screen widget support." },
+        tech: ["WebSockets", "WorkManager", "Jetpack Glance", "Clean Architecture"],
+        features: { tr: ["Anlık fiyat güncellemeleri", "Arka plan servisleri", "Ana ekran widget'ı"], az: ["Anlıq qiymət yeniləmələri", "Arxa plan servisləri", "Ana ekran vidceti"], en: ["Real-time price updates", "Background workers", "Home screen widgets"] }
+    }
 ]
 };
 
@@ -2844,6 +2871,32 @@ contentData['cross-platform'] = {
             en: "A bridge that allows Flutter code to communicate with host platforms (iOS and Android) to access native APIs."
         }
     }
+],
+projects: [
+    {
+        id: 1,
+        level: "junior",
+        title: { tr: "Global Alışveriş Listesi", az: "Qlobal Alış-veriş Siyahısı", en: "Global Shopping List" },
+        desc: { tr: "Cihazlar arası senkronize olan, şık arayüzlü bir market listesi uygulaması.", az: "Cihazlar arası sinxronizasiya olunan, şık interfeysli market siyahısı.", en: "A stylish shopping list app that syncs across devices." },
+        tech: ["Flutter/React Native", "Firebase Auth", "Cloud Firestore"],
+        features: { tr: ["Gerçek zamanlı senkronizasyon", "Kategori yönetimi", "Sosyal giriş (Google/Apple)"], az: ["Real-time sinxronizasiya", "Kateqoriya idarəetməsi", "Sosial giriş"], en: ["Real-time sync", "Category management", "Social auth"] }
+    },
+    {
+        id: 2,
+        level: "mid",
+        title: { tr: "Fitness & Aktivite Sosyal Ağı", az: "Fitnes Sosyal Şəbəkəsi", en: "Fitness Social Network" },
+        desc: { tr: "Kullanıcıların antrenmanlarını paylaştığı ve birbirini takip edebildiği bir platform.", az: "İstifadəçilərin məşqlərini paylaşdığı və bir-birini izləyə bildiyi platform.", en: "A platform where users share workouts and follow each other." },
+        tech: ["State Management (Bloc/Redux)", "REST API", "Image Picker & Cropper"],
+        features: { tr: ["Dinamik haber akışı (Feed)", "Profil özelleştirme", "Beğeni ve yorum sistemi"], az: ["Dinamik xəbər lenti", "Profil fərdiləşdirmə", "Bəyənmə və şərh sistemi"], en: ["Dynamic news feed", "Profile customization", "Like & comment system"] }
+    },
+    {
+        id: 3,
+        level: "expert",
+        title: { tr: "E-Ticaret Süper Uygulaması", az: "E-Ticarət Super Tətbiqi", en: "E-commerce Super App" },
+        desc: { tr: "Ödeme entegrasyonu ve karmaşık animasyonlar içeren tam kapsamlı mağaza.", az: "Ödəniş inteqrasiyası və mürəkkəb animasiyalar olan tam mağaza tətbiqi.", en: "Full-scale store with payment integration and complex animations." },
+        tech: ["Lottie Animations", "Stripe/IAP Integration", "Deep Linking", "CI/CD (Codemagic/Fastlane)"],
+        features: { tr: ["Gelişmiş sepet mantığı", "Ödeme geçidi entegrasyonu", "Push bildirim stratejileri"], az: ["Təkmil səbət məntiqi", "Ödəniş sistemi inteqrasiyası", "Push bildirişləri"], en: ["Advanced cart logic", "Payment gateway integration", "Push notification strategies"] }
+    }
 ]
 };
 
@@ -3001,6 +3054,7 @@ contentData['ios'] = {
         }
     ],
 
+    // 5. Interview
     interview: [
     {
         id: 1,
@@ -3261,6 +3315,34 @@ contentData['ios'] = {
             az: "Test edilməsi çətindir (global state) və obyektlər arasındakı asılılığı gizlədərək mürəkkəbliyə səbəb ola bilər.",
             en: "They can make unit testing difficult due to global state and hide dependencies between components."
         }
+    }
+],
+
+ // 6. Projects
+    projects: [
+    {
+        id: 1,
+        level: "junior",
+        title: { tr: "Kişisel Finans Takipçisi", az: "Şəxsi Maliyyə İzləyicisi", en: "Personal Finance Tracker" },
+        desc: { tr: "Harcamaları kategorize eden ve günlük limitleri takip eden şık bir uygulama.", az: "Xərcləri kateqoriyalara ayıran və gündəlik limitləri izləyən şık bir tətbiq.", en: "A sleek app to categorize expenses and track daily spending limits." },
+        tech: ["SwiftUI", "SwiftData/CoreData", "MVVM Architecture"],
+        features: { tr: ["Harcama ekleme/silme", "Pasta grafiği görselleştirme", "Yerel bildirimler"], az: ["Xərc əlavə etmə/silmə", "Diaqram vizuallaşdırma", "Yerli bildirişlər"], en: ["Add/delete expenses", "Pie chart visualization", "Local notifications"] }
+    },
+    {
+        id: 2,
+        level: "mid",
+        title: { tr: "Hava Durumu & Rota Tahmini", az: "Hava Proqnozu və Marşrut", en: "Weather & Route Forecast" },
+        desc: { tr: "Konum tabanlı hava durumu verilerini harita üzerinde gösteren uygulama.", az: "Məkan əsaslı hava məlumatlarını xəritə üzərində göstərən tətbiq.", en: "An app showing location-based weather data integrated with map routing." },
+        tech: ["SwiftUI/UIKit", "CoreLocation", "MapKit", "Combine/Async-Await"],
+        features: { tr: ["Anlık konum takibi", "REST API entegrasyonu", "Karanlık mod desteği"], az: ["Anlıq məkan izləmə", "REST API inteqrasiyası", "Qaranlıq mod dəstəyi"], en: ["Real-time location tracking", "REST API integration", "Dark mode support"] }
+    },
+    {
+        id: 3,
+        level: "expert",
+        title: { tr: "AI Tabanlı Fitness Asistanı", az: "AI Əsaslı Fitnes Köməkçisi", en: "AI-Powered Fitness Assistant" },
+        desc: { tr: "Kamera kullanarak egzersiz formunu analiz eden yüksek performanslı uygulama.", az: "Kamera vasitəsilə məşq hərəkətlərini analiz edən yüksək performanslı tətbiq.", en: "High-performance app analyzing workout form using the device camera." },
+        tech: ["CoreML", "Vision Framework", "AVFoundation", "Combine"],
+        features: { tr: ["Gerçek zamanlı iskelet takibi", "Tekrar sayacı", "Sağlık kiti (HealthKit) entegrasyonu"], az: ["Real-time skelet izləmə", "Təkrar sayğacı", "HealthKit inteqrasiyası"], en: ["Real-time pose tracking", "Rep counter", "HealthKit integration"] }
     }
 ]
 };
