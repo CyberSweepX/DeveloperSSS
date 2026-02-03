@@ -830,29 +830,29 @@ const CategoryDetail = () => {
         `;
 
         return `
-            <div class="bg-dark-900 border border-white/10 rounded-xl overflow-hidden">
-                ${steps.map((step, idx) => `
-                    <div class="flex gap-6 p-6 border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors cursor-default group">
-                        <div class="flex flex-col items-center">
-                            <div class="w-8 h-8 rounded-full bg-dark-800 border ${step.status === 'start' ? 'border-brand-blue text-brand-blue' : 'border-gray-700 text-gray-500'} flex items-center justify-center font-bold text-sm shadow-lg z-10 transition-colors">
-                                ${idx + 1}
-                            </div>
-                            ${idx !== steps.length - 1 ? `<div class="w-0.5 h-full bg-white/5 my-2 group-hover:bg-white/10 transition-colors"></div>` : ''}
-                        </div>
-                        <div class="flex-1 pb-4">
-                            <h4 class="text-lg font-bold text-white mb-2 group-hover:text-brand-blue transition-colors">${step.title}</h4>
-                            <div class="flex flex-wrap gap-2">
-                                ${step.items.map(item => `
-                                    <span class="px-3 py-1 rounded-md bg-dark-800 border border-white/10 text-sm text-gray-300 hover:border-brand-blue/30 transition-colors">
-                                        ${item}
-                                    </span>
-                                `).join('')}
-                            </div>
-                        </div>
+    <div class="bg-dark-900 border border-white/10 rounded-xl overflow-hidden">
+        ${steps.map((step, idx) => `
+            <div class="flex gap-6 p-6 border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors cursor-default group">
+                <div class="flex flex-col items-center">
+                    <div class="w-8 h-8 rounded-full bg-dark-800 border border-gray-700 text-gray-500 flex items-center justify-center font-bold text-sm shadow-lg z-10 transition-colors">
+                        ${idx + 1}
                     </div>
-                `).join('')}
+                    ${idx !== steps.length - 1 ? `<div class="w-0.5 h-full bg-white/5 my-2 group-hover:bg-white/10 transition-colors"></div>` : ''}
+                </div>
+                <div class="flex-1 pb-4">
+                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-brand-blue transition-colors">${step.title}</h4>
+                    <div class="flex flex-wrap gap-2">
+                        ${step.items.map(item => `
+                            <span class="px-3 py-1 rounded-md bg-dark-800 border border-white/10 text-sm text-gray-300 hover:border-brand-blue/30 transition-colors">
+                                ${item}
+                            </span>
+                        `).join('')}
+                    </div>
+                </div>
             </div>
-        `;
+        `).join('')}
+    </div>
+`;
     };
 
     const renderResources = () => {
