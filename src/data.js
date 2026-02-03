@@ -72,7 +72,7 @@ export const categories = [
     {
         id: 'web-dev',
         icon: '💻',
-        color: 'blue',
+        color: 'oklch(70.7% 0.165 254.624)',
         title: { en: 'Web Development', tr: 'Web Geliştirme', az: 'Veb İnkişafı' },
         desc: { en: 'Frontend, Backend, Full Stack', tr: 'Frontend, Backend, Full Stack', az: 'Frontend, Backend, Full Stack' },
         subCategories: [
@@ -84,7 +84,7 @@ export const categories = [
     {
         id: 'mobile-dev',
         icon: '📱',
-        color: 'from-purple-500 to-pink-500',
+        color: 'oklch(71.4% 0.203 305.504)',
         title: { en: 'Mobile Development', tr: 'Mobil Geliştirme', az: 'Mobil İnkişafı' },
         desc: { en: 'iOS, Android, Cross-Platform', tr: 'iOS, Android, Cross-Platform', az: 'iOS, Android, Cross-Platform' },
         subCategories: [
