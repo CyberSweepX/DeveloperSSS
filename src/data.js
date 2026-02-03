@@ -72,7 +72,7 @@ export const categories = [
     {
         id: 'web-dev',
         icon: '💻',
-        color: 'text-cyan-400',
+        color: 'from-cyan-400 to-blue-500',
         title: { en: 'Web Development', tr: 'Web Geliştirme', az: 'Veb İnkişafı' },
         desc: { en: 'Frontend, Backend, Full Stack', tr: 'Frontend, Backend, Full Stack', az: 'Frontend, Backend, Full Stack' },
         subCategories: [
@@ -84,7 +84,7 @@ export const categories = [
     {
         id: 'mobile-dev',
         icon: '📱',
-        color: 'text-pink-500',
+        color: 'from-purple-500 to-pink-500',
         title: { en: 'Mobile Development', tr: 'Mobil Geliştirme', az: 'Mobil İnkişafı' },
         desc: { en: 'iOS, Android, Cross-Platform', tr: 'iOS, Android, Cross-Platform', az: 'iOS, Android, Cross-Platform' },
         subCategories: [
