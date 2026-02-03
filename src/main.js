@@ -163,7 +163,7 @@ const Sidebar = () => {
 
 const MobileMenu = () => {
     return `
-    <div onclick="window.toggleMobileMenu()" class="lg:hidden fixed inset-0 bg-black/80 z-[60] backdrop-blur-sm transition-opacity ${state.isMobileMenuOpen ? 'opacity-100 placeholder:pointer-events-auto' : 'opacity-0 pointer-events-none'}"></div>
+    <div onclick="window.toggleMobileMenu()" class="lg:hidden fixed inset-0 bg-black/80 z-[60] backdrop-blur-sm transition-opacity ${state.isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}"></div>
     <aside class="lg:hidden fixed inset-y-0 left-0 w-[85%] max-w-xs bg-dark-900 border-r border-white/10 z-[70] transform transition-transform duration-300 ease-out ${state.isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} overflow-y-auto shadow-2xl">
         <div class="p-4 border-b border-white/10 flex items-center justify-between sticky top-0 bg-dark-900 z-10">
             <div class="flex items-center gap-2">
@@ -206,7 +206,7 @@ const MobileMenu = () => {
                 <h3 class="text-xs uppercase tracking-widest font-bold text-gray-500 px-3 mb-2">Technical Roadmaps</h3>
                 ${categories.map(cat => `
                     <div class="space-y-1">
-                        <button onclick="window.navigateToCategory('${cat.id}')" class="w-full flex items-center gap-3 px-3 py-2.5 text-left text-gray-300 font-semibold hover:text-white transition-colors">
+                        <button onclick="window.navigateToCategory('${cat.id}'); window.toggleMobileMenu()" class="w-full flex items-center gap-3 px-3 py-2.5 text-left text-gray-300 font-semibold hover:text-white transition-colors">
                             <span class="text-lg">${cat.icon}</span>
                             <span>${getLocalizedContent(cat.title)}</span>
                         </button>
@@ -228,6 +228,7 @@ const MobileMenu = () => {
     </aside>
     `;
 };
+
 
 const Footer = () => {
     return `
