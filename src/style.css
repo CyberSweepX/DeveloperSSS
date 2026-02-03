@@ -112,3 +112,8 @@
   border-radius: 50%;
   animation: blob 10s infinite alternate;
 }
+
+/* JS-dən gələn rəngi tətbiq etmək üçün custom klas */
+.group:hover .custom-hover-text {
+    color: var(--hover-color);
+}

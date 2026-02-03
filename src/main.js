@@ -589,9 +589,17 @@ const LandingPage = () => {
                     </div>
                     
                     <div class="relative z-10">
-                        <h3 class="font-bold text-lg text-white mb-2 transition-all duration-300 group-hover:text-${cat.color.split(' ')[0].replace('from-', '')}">
-                            ${getLocalizedContent(cat.title)}
-                        </h3>
+                        <h3 class="font-bold text-lg text-white mb-2 transition-all duration-300 custom-hover-text" 
+    style="--hover-color: ${cat.color.includes('cyan') ? '#67e8f9' : 
+                            cat.color.includes('purple') ? '#c084fc' : 
+                            cat.color.includes('emerald') ? '#6ee7b7' : 
+                            cat.color.includes('red') ? '#f87171' : 
+                            cat.color.includes('indigo') ? '#818cf8' : 
+                            cat.color.includes('yellow') ? '#fbbf24' : 
+                            cat.color.includes('fuchsia') ? '#e879f9' : 
+                            '#5eead4'}">
+    ${getLocalizedContent(cat.title)}
+</h3>
                          <p class="text-xs text-gray-400 line-clamp-2 leading-relaxed">
                             ${getLocalizedContent(cat.desc)}
                         </p>
