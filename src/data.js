@@ -7329,7 +7329,565 @@ projects: [
 ]
 };
 
+contentData['embedded'] = {
+    // 1. ROADMAP
+    roadmap: {
+        tr: [
+            { title: "Elektronik Temelleri", items: ["Ohm Kanunu, KVL/KCL", "Pasif Bileşenler (Direnç, Kapasitör)", "Transistörler & MOSFETs", "Osiloskop & Multimetre Kullanımı"], status: "start" },
+            { title: "C ve C++ Programlama", items: ["Pointers & Memory Layout", "Bit Manipülasyonu", "Volatile Anahtar Kelimesi", "Struct Alignment & Padding"], status: "start" },
+            { title: "Mikrodenetleyici Mimarisi", items: ["Register-Level Programlama", "Interrupts & ISR", "Timers & PWM", "DMA (Direct Memory Access)"], status: "mid" },
+            { title: "Haberleşme Protokolleri", items: ["UART", "I2C", "SPI", "CAN Bus (Otomotiv için kritik)"], status: "mid" },
+            { title: "Gömülü İşletim Sistemleri", items: ["RTOS (FreeRTOS, Zephyr)", "Task Scheduling", "Mutex & Semaphores", "Embedded Linux (Yocto)"], status: "advanced" },
+            { title: "Donanım Soyutlama (HAL)", items: ["HAL & Low Layer Drivers", "BSP (Board Support Package)", "Device Drivers Yazımı"], status: "advanced" },
+            { title: "Hata Ayıklama & Araçlar", items: ["JTAG/SWD Debugging", "GDB", "Logic Analyzer", "Static Analysis (MISRA C)"], status: "advanced" },
+            { title: "İleri Seviye Konular", items: ["Digital Signal Processing (DSP)", "FPGA & VHDL/Verilog", "Edge AI", "Secure Boot & OTA"], status: "expert" }
+        ],
+        az: [
+            { title: "Elektronika Əsasları", items: ["Om Qanunu", "Passiv Komponentlər", "Tranzistorlar", "Osiloqraf & Multimetr"], status: "start" },
+            { title: "C və C++ Proqramlaşdırma", items: ["Pointers & Yaddaş", "Bit Manipulyasiyası", "Volatile açar sözü", "Struct Alignment"], status: "start" },
+            { title: "Mikrokontroller Arxitekturası", items: ["Register-Level Proqramlaşdırma", "Interrupts & ISR", "Taymerlər & PWM", "DMA"], status: "mid" },
+            { title: "Rabitə Protokolları", items: ["UART", "I2C", "SPI", "CAN Bus"], status: "mid" },
+            { title: "Quraşdırılmış Əməliyyat Sistemləri", items: ["RTOS (FreeRTOS)", "Task Scheduling", "Mutex & Semaphores", "Embedded Linux"], status: "advanced" },
+            { title: "Drayverlərin Yazılması", items: ["HAL", "Device Drivers", "BSP"], status: "advanced" },
+            { title: "Debug & Alətlər", items: ["JTAG/SWD Debugging", "GDB", "Logic Analyzer", "MISRA C"], status: "advanced" },
+            { title: "İrəli Səviyyə Mövzular", items: ["DSP", "FPGA & VHDL/Verilog", "Edge AI", "OTA Yeniləmələr"], status: "expert" }
+        ]
+    },
 
+    // 2. RESOURCES
+    resources: {
+        items: [
+            { type: 'youtube', title: 'Phil’s Lab', url: 'https://youtube.com/@PhilsLab', desc: 'PCB tasarımı ve STM32 gömülü yazılım için harika bir kaynak.', lang: 'en' },
+            { type: 'youtube', title: 'Low Level Learning', url: 'https://youtube.com/@LowLevelLearning', desc: 'C, Assembly ve düşük seviyeli programlama üzerine eğlenceli videolar.', lang: 'en' },
+            { type: 'site', title: 'Embedded.com', url: 'https://www.embedded.com', desc: 'Sektörel makaleler ve teknik rehberler.', lang: 'global' },
+            { type: 'course', title: 'FastBit Embedded Brain Academy', url: 'https://www.udemy.com/user/kiran-nayak-2/', desc: 'STM32 ve RTOS konularında dünyanın en popüler kursları.', lang: 'en' },
+            { type: 'tool', title: 'STM32CubeIDE', url: 'https://www.st.com/en/development-tools/stm32cubeide.html', desc: 'ST mikrodenetleyiciler için ücretsiz geliştirme ortamı.', lang: 'global' },
+            { type: 'tool', title: 'KiCad', url: 'https://www.kicad.org', desc: 'Açık kaynak PCB tasarım aracı.', lang: 'global' }
+        ]
+    },
+
+    // 3. JOBS & SALARY
+    jobs: {
+        TR: {
+            platforms: ["LinkedIn", "SavunmaSanayi.net", "Kariyer.net"],
+            top_skills: ["C/C++", "STM32/ARM", "RTOS", "Altium/KiCad", "Embedded Linux"],
+            avg_salary: "Junior: 40k-60k TL | Mid: 70k-120k TL | Senior: 150k+ TL (Savunma sanayinde daha yüksektir)"
+        },
+        AZ: {
+            platforms: ["HelloJob.az", "LinkedIn"],
+            top_skills: ["C/C++", "Arduino/STM32", "PCB Design", "IoT", "Microcontrollers"],
+            avg_salary: "Junior: 900-1500 AZN | Mid: 2000-3500 AZN | Senior: 4500+ AZN"
+        },
+        GLOBAL: {
+            platforms: ["LinkedIn", "Indeed", "Glassdoor"],
+            top_skills: ["Bare-Metal C", "RTOS", "Linux Kernel", "FPGA", "Python (for testing)"],
+            avg_salary: "Junior: $4k-$6k | Mid: $8k-$12k | Senior: $15k+ (Monthly/Remote vary)"
+        }
+    },
+
+    // 4. FAQ
+    faq: [
+        {
+            id: 1,
+            q: { tr: "Arduino ile başlamalı mıyım?", az: "Arduino ilə başlamalıyam?" },
+            a: { tr: "Hobi için evet, ama mühendislik kariyeri için doğrudan STM32 veya ESP32 gibi çiplerin register yapılarını öğrenerek başlamak daha profesyoneldir.", az: "Hobi üçün bəli, amma peşəkar karyera üçün birbaşa STM32 və ya ESP32 kimi çiplərlə başlamaq daha yaxşıdır." }
+        },
+        {
+            id: 2,
+            q: { tr: "C++ gömülü sistemlerde kullanılır mı?", az: "C++ gömülü sistemlərdə istifadə olunur?" },
+            a: { tr: "Evet, özellikle modern gömülü sistemlerde (RTOS ve Embedded Linux) nesne yönelimli yapısı nedeniyle C++ çok yaygınlaşmıştır.", az: "Bəli, xüsusilə müasir sistemlərdə (RTOS və Embedded Linux) C++ çox geniş istifadə olunur." }
+        }
+    ],
+
+    // 5. INTERVIEW PREP
+    interview: [
+        {
+            id: 1,
+            q: { tr: "'volatile' anahtar kelimesi ne işe yarar?", az: "'volatile' açar sözü nə işə yarayır?" },
+            a: { tr: "Derleyiciye bu değişkenin dışarıdan (örn: bir interrupt veya donanım register'ı) her an değişebileceğini ve optimizasyon yapmaması gerektiğini bildirir.", az: "Kompilyatora bildirir ki, bu dəyişən kənardan (məs: interrupt) hər an dəyişə bilər və optimizasiya olunmamalıdır." }
+        },
+        {
+            id: 2,
+            q: { tr: "Interrupt Service Routine (ISR) yazarken nelere dikkat edilmelidir?", az: "ISR yazarkən nələrə diqqət edilməlidir?" },
+            a: { tr: "ISR mümkün olduğunca kısa olmalı, içinde 'printf' veya 'delay' gibi fonksiyonlar kullanılmamalı ve bloklayıcı işlemlerden kaçınılmalıdır.", az: "ISR mümkün qədər qısa olmalı, daxilində 'printf' və ya 'delay' kimi funksiyalar istifadə olunmamalıdır." }
+        }
+    ],
+
+    // 6. PROJECT HUB
+    projects: [
+        {
+            id: 1,
+            level: "junior",
+            title: { tr: "Akıllı Ev Termostatı", az: "Ağıllı Ev Termostatı", en: "Smart Home Thermostat" },
+            desc: { tr: "Sensörden veri okuyup ekrana yazan ve röle kontrol eden sistem.", az: "Sensordan məlumat oxuyub ekrana yazan və röleni idarə edən sistem.", en: "System that reads sensor data, displays it, and controls a relay." },
+            tech: ["C", "STM32/ESP32", "DHT11/22", "I2C LCD"],
+            features: { tr: ["Sıcaklık takibi", "Eşik değer kontrolü", "LCD arayüz"], az: ["Temperatur izləmə", "Limit nəzarəti", "LCD interfeys"], en: ["Temp monitoring", "Threshold control", "LCD display"] }
+        },
+        {
+            id: 2,
+            level: "mid",
+            title: { tr: "FreeRTOS Tabanlı Hava İstasyonu", az: "FreeRTOS Əsaslı Hava Stansiyası", en: "FreeRTOS Weather Station" },
+            desc: { tr: "Birden fazla görevin (task) aynı anda çalıştığı ve verilerin buluta gönderildiği sistem.", az: "Eyni anda bir neçə tapşırığın (task) çalışdığı və məlumatların buluda göndərildiyi sistem.", en: "Multi-tasking system that sends weather data to the cloud." },
+            tech: ["FreeRTOS", "MQTT", "ESP32", "SPI/I2C Sensors"],
+            features: { tr: ["Task önceliklendirme", "Wi-Fi ile veri transferi", "Düşük güç modu"], az: ["Task prioritetləri", "Wi-Fi ilə data transferi", "Low power mode"], en: ["Task scheduling", "MQTT data transfer", "Power management"] }
+        },
+        {
+            id: 3,
+            level: "expert",
+            title: { tr: "Otonom Çizgi İzleyen Drone/Robot (Bare-Metal)", az: "Otonom Robot (Bare-Metal)", en: "Autonomous Robot (Bare-Metal)" },
+            desc: { tr: "Kendi RTOS'unuzu veya çok gelişmiş sürücülerinizi yazdığınız yüksek hızlı kontrol sistemi.", az: "Öz RTOS-unuzu və ya təkmil drayverlərinizi yazdığınız yüksək sürətli idarəetmə sistemi.", en: "High-speed control system with custom drivers or RTOS." },
+            tech: ["C/C++", "PID Control", "DMA", "Kalman Filter"],
+            features: { tr: ["Gerçek zamanlı sinyal işleme", "Hassas motor kontrolü", "Sensör füzyonu"], az: ["Real-time siqnal emalı", "Dəqiq motor idarəetməsi", "Sensor fusion"], en: ["Real-time signal processing", "Precise motor control", "Sensor fusion"] }
+        }
+    ]
+};
+
+contentData['iot'] = {
+    // 1. ROADMAP
+    roadmap: {
+        tr: [
+            { title: "Elektronik Temelleri", items: ["Temel Devre Elemanları (Direnç, Kondansatör)", "Devre Analizi (Ohm Kanunu)", "Multimetre & Osiloskop Kullanımı", "PCB Tasarımı (Altium, KiCad)"], status: "start" },
+            { title: "Gömülü Programlama Dilleri", items: ["C (Gömülü Sistemlerin Atası)", "C++ (OOP ve Kütüphaneler)", "Python (Raspberry Pi & Prototipleme)", "Rust (Modern & Güvenli Gömülü Sistemler)"], status: "start" },
+            { title: "Mikrokontrolcüler & Mimari", items: ["Arduino (Atmega)", "ESP32 & ESP8266 (Wi-Fi/BT)", "STM32 (ARM Cortex-M)", "Raspberry Pi (SBC)", "Memory Management (Stack/Heap)"], status: "mid" },
+            { title: "IoT Haberleşme Protokolleri", items: ["MQTT (Hafif ve Popüler)", "HTTP/REST", "WebSockets", "CoAP", "LoRaWAN (Uzun Mesafe/Düşük Güç)"], status: "mid" },
+            { title: "Sensörler & Aktüatörler", items: ["I2C, SPI, UART İletişimi", "Analog & Dijital Sensör Okuma", "PWM ile Motor Kontrolü", "Interrupts & Timers"], status: "mid" },
+            { title: "IoT Bulut & Veri Yönetimi", items: ["AWS IoT Core", "Google Cloud IoT", "ThingsBoard", "InfluxDB (Time-series Data)"], status: "advanced" },
+            { title: "Bağlantı Teknolojileri", items: ["Wi-Fi & Bluetooth (BLE)", "Zigbee & Z-Wave", "Cellular (NB-IoT, 5G)", "NFC/RFID"], status: "advanced" },
+            { title: "İleri Seviye Konular", items: ["RTOS (FreeRTOS, Zephyr)", "Edge Computing", "OTA (Over-the-Air) Güncellemeler", "Güç Optimizasyonu (Deep Sleep)"], status: "expert" },
+            { title: "IoT Güvenliği", items: ["TLS/SSL Sertifikaları", "Secure Boot", "Encryption (AES, RSA)", "Firmware Güvenliği"], status: "expert" }
+        ],
+        az: [
+            { title: "Elektronika Əsasları", items: ["Dövrə Elementləri", "Dövrə Analizi", "Multimetr & Osiloskop", "PCB Dizaynı"], status: "start" },
+            { title: "Daxili Proqramlaşdırma (Embedded)", items: ["C Dili", "C++", "Python", "Rust"], status: "start" },
+            { title: "Mikrokontrollerlər", items: ["Arduino", "ESP32", "STM32 (ARM)", "Raspberry Pi"], status: "mid" },
+            { title: "IoT Protokolları", items: ["MQTT", "HTTP/REST", "CoAP", "LoRaWAN"], status: "mid" },
+            { title: "Sensorlar & Aktuatorlar", items: ["I2C, SPI, UART", "Analoq & Rəqəmsal Oxuma", "PWM Kontrol", "Interrupts"], status: "mid" },
+            { title: "IoT Bulud Sistemləri", items: ["AWS IoT Core", "ThingsBoard", "InfluxDB", "Grafana"], status: "advanced" },
+            { title: "Əlaqə Texnologiyaları", items: ["Wi-Fi & BLE", "Zigbee", "NB-IoT", "Cellular"], status: "advanced" },
+            { title: "İrəli Səviyyə Mövzular", items: ["RTOS Əsasları", "Edge Computing", "OTA Yeniləmələr", "Enerji Optimizasiyası"], status: "expert" },
+            { title: "IoT Təhlükəsizliyi", items: ["TLS/SSL", "Secure Boot", "Şifrələmə (Encryption)", "Firmware Security"], status: "expert" }
+        ]
+    },
+
+    // 2. RESOURCES
+    resources: {
+        items: [
+            { type: 'youtube', title: 'GreatScott!', url: 'https://youtube.com/@GreatScottLab', desc: 'Elektronik projeleri ve temel kavramlar için en iyi görsel kaynak.', lang: 'en' },
+            { type: 'youtube', title: 'Andreas Spiess', url: 'https://youtube.com/@AndreasSpiess', desc: 'IoT ve kablosuz haberleşme (LoRa, ESP32) üzerine "The Guy with the Swiss Accent".', lang: 'en' },
+            { type: 'youtube', title: 'Lezzetli Robot Tarifleri', url: 'https://youtube.com/@LezzetliRobotTarifleri', desc: 'Elektronik ve Arduino üzerine Türkiye\'nin en samimi ve kaliteli kanalı.', lang: 'tr' },
+            { type: 'doc', title: 'Arduino Docs', url: 'https://docs.arduino.cc', desc: 'Başlangıç için dünya standardı.', lang: 'global' },
+            { type: 'doc', title: 'Espressif Documentation', url: 'https://docs.espressif.com', desc: 'ESP32 ve ESP8266 dünyasının detaylı rehberi.', lang: 'global' },
+            { type: 'tool', title: 'Wokwi', url: 'https://wokwi.com', desc: 'Donanım satın almadan tarayıcı üzerinde IoT simülasyonu yapın.', lang: 'global' },
+            { type: 'tool', title: 'MQTT Explorer', url: 'https://mqtt-explorer.com', desc: 'MQTT trafik akışını görselleştirmek için vazgeçilmez bir araç.', lang: 'global' }
+        ]
+    },
+
+    // 3. JOBS & SALARY
+    jobs: {
+        TR: {
+            platforms: ["LinkedIn", "SavunmaSanayi.net", "Kariyer.net"],
+            top_skills: ["Embedded C/C++", "STM32", "Altium Designer", "RTOS", "Linux"],
+            avg_salary: "Junior: 40k-60k TL | Mid: 70k-120k TL | Senior: 150k+ TL"
+        },
+        AZ: {
+            platforms: ["HelloJob.az", "LinkedIn", "Technest.az"],
+            top_skills: ["Microcontrollers", "C/C++", "Circuit Design", "Automation"],
+            avg_salary: "Junior: 1000-1500 AZN | Mid: 2000-3500 AZN | Senior: 4500+ AZN"
+        },
+        GLOBAL: {
+            platforms: ["Indeed", "Glassdoor", "RemoteIoT", "AngelList"],
+            top_skills: ["Embedded Systems", "Firmware Engineering", "RTOS", "Cloud Architecture", "Python"],
+            avg_salary: "Junior: $4k-$7k | Mid: $8k-$12k | Senior: $15k+ (Monthly/Remote)"
+        }
+    },
+
+    // 4. FAQ
+    faq: [
+        {
+            id: 1,
+            q: { tr: "IoT için hangi dili öğrenmeliyim?", az: "IoT üçün hansı dili öyrənməliyəm?", en: "Which language for IoT?" },
+            a: { tr: "Donanım seviyesi için kesinlikle C ve C++. Üst seviye mantık, prototipleme ve veri işleme için Python.", az: "Aparat səviyyəsi üçün mütləq C və C++. Prototipləmə və data üçün Python.", en: "C and C++ for hardware level. Python for prototyping and data processing." }
+        },
+        {
+            id: 2,
+            q: { tr: "Arduino profesyonel projelerde kullanılır mı?", az: "Arduino professional layihələrdə istifadə olunur?", en: "Is Arduino used in professional projects?" },
+            a: { tr: "Arduino bir 'ekosistem' olarak prototipleme için harikadır, ancak endüstriyel ürünlerde genellikle saf STM32, ESP32 veya özel PCB tasarımları tercih edilir.", az: "Arduino prototip üçün əladır, lakin sənaye məhsullarında daha çox STM32 və ya ESP32 istifadə olunur.", en: "Arduino is great for prototyping. For industrial products, pure microcontrollers like STM32 or ESP32 are preferred." }
+        }
+    ],
+
+    // 5. INTERVIEW PREP
+    interview: [
+        {
+            id: 1,
+            q: { tr: "I2C ve SPI arasındaki fark nedir?", az: "I2C və SPI arasındakı fərq nədir?", en: "Difference between I2C and SPI?" },
+            a: { tr: "I2C iki kablo kullanır ve daha yavaştır; SPI ise dört kablo kullanır ve çok daha hızlıdır. I2C daha fazla cihazın bağlanmasına izin verir.", az: "I2C 2 naqil istifadə edir və yavaşdır; SPI 4 naqil istifadə edir və sürətlidir.", en: "I2C uses 2 wires (SDA/SCL) and is slower. SPI uses 4 wires and is much faster." }
+        },
+        {
+            id: 2,
+            q: { tr: "Watchdog Timer nedir?", az: "Watchdog Timer nədir?", en: "What is a Watchdog Timer?" },
+            a: { tr: "Sistemin kilitlenmesi durumunda cihazı otomatik olarak yeniden başlatan bir donanım zamanlayıcısıdır.", az: "Sistem donarsa, cihazı avtomatik yenidən başladan donanım taymeridir.", en: "A hardware timer that automatically resets the system if the software freezes." }
+        }
+    ],
+
+    // 6. PROJECT HUB
+    projects: [
+        {
+            id: 1,
+            level: "junior",
+            title: { tr: "Akıllı Ev Termostatı", az: "Ağıllı Ev Termostatı", en: "Smart Home Thermostat" },
+            desc: { tr: "Sıcaklık verisini ölçüp buluta gönderen ve web üzerinden kontrol edilen sistem.", az: "Temperaturu ölçüb buluda göndərən və veb üzərindən idarə olunan sistem.", en: "System that measures temperature, sends it to the cloud, and is controlled via web." },
+            tech: ["ESP8266/ESP32", "DHT11 Sensor", "Blynk/MQTT"],
+            features: { tr: ["Anlık veri takibi", "Mobil bildirim", "Röle kontrolü"], az: ["Real-time izləmə", "Mobil bildiriş", "Rele idarəetməsi"], en: ["Real-time monitoring", "Mobile notifications", "Relay control"] }
+        },
+        {
+            id: 2,
+            level: "mid",
+            title: { tr: "LoRa Tabanlı Tarım Takip", az: "LoRa əsaslı Kənd Təsərrüfatı", en: "LoRa Based Agri-Tech" },
+            desc: { tr: "İnternet olmayan tarlalarda kilometrelerce mesafeden toprak nemi verisi gönderen sistem.", az: "İnternet olmayan tarlalarda kilometrlərlə məsafədən məlumat göndərən sistem.", en: "System sending soil moisture data from miles away in fields without internet." },
+            tech: ["Arduino", "LoRa SX1278", "Deep Sleep Mode"],
+            features: { tr: ["Düşük güç tüketimi", "Uzun mesafe haberleşme", "Güneş paneli desteği"], az: ["Aşağı enerji sərfiyyatı", "Uzaq məsafəli rabitə", "Günəş paneli"], en: ["Low power consumption", "Long range comms", "Solar power"] }
+        }
+    ]
+};
+
+contentData['web3'] = {
+    // 1. ROADMAP
+    roadmap: {
+        tr: [
+            { title: "Blokzincir Temelleri", items: ["Kriptografik Hash Fonksiyonları", "Public/Private Key (Asimetrik Şifreleme)", "P2P Ağlar", "Consensus (PoW, PoS, DPoS)"], status: "start" },
+            { title: "Web3'e Giriş", items: ["Cüzdan Mantığı (Metamask, Seed Phrase)", "Blockchain Explorer (Etherscan)", "Gas Fee & Transaction Mantığı", "Nodes (Full, Light, Archive)"], status: "start" },
+            { title: "Akıllı Kontrat Geliştirme", items: ["Solidity (EVM Standardı)", "Veri Tipleri & Functions", "Events & Errors", "Inheritance & Interfaces"], status: "mid" },
+            { title: "Geliştirme Ortamları", items: ["Hardhat / Foundry", "Ethers.js / Web3.js", "Remix IDE", "OpenZeppelin Kütüphaneleri"], status: "mid" },
+            { title: "Token Standartları & DeFi", items: ["ERC-20 (Fungible Tokens)", "ERC-721 & ERC-1155 (NFTs)", "DEX Mantığı (Uniswap, AMM)", "Lending & Staking Mekanizmaları"], status: "mid" },
+            { title: "Frontend & Web3 Entegrasyonu", items: ["Wallet Connect", "Sign-in with Ethereum (SIWE)", "Contract Interaction", "Subgraph (The Graph)"], status: "advanced" },
+            { title: "Layer 2 & Scaling", items: ["Rollups (Optimistic vs ZK)", "Sidechains (Polygon)", "Bridging Assets", "L2 Gaz Optimizasyonu"], status: "advanced" },
+            { title: "İleri Seviye & Güvenlik", items: ["Reentrancy Attacks", "Flash Loans", "Upgradable Contracts (Proxy)", "Formal Verification"], status: "expert" },
+            { title: "Yeni Nesil Web3", items: ["Account Abstraction (ERC-4337)", "Zero Knowledge Proofs (ZKP)", "DAO Governance", "IPFS & Arweave (Storage)"], status: "expert" }
+        ],
+        az: [
+            { title: "Blokçeyn Əsasları", items: ["Heş Funksiyaları", "Açıq/Gizli Açar (Asimmetrik Şifrləmə)", "P2P Şəbəkələr", "Konsensus (PoW, PoS)"], status: "start" },
+            { title: "Web3-ə Giriş", items: ["Pulqabı Məntiqi (Seed Phrase)", "Blockchain Explorer (Etherscan)", "Qaz haqqı (Gas Fee)", "Nodes (Düyünlər)"], status: "start" },
+            { title: "Smart Kontrakt İnkişafı", items: ["Solidity Dili", "Data Tipləri & Funksiyalar", "Events & Errors", "Inheritance"], status: "mid" },
+            { title: "İnkişaf Alətləri", items: ["Hardhat / Foundry", "Ethers.js", "Remix IDE", "OpenZeppelin Standardları"], status: "mid" },
+            { title: "Token Standardları & DeFi", items: ["ERC-20 (Tokenlər)", "ERC-721 (NFT)", "DEX Məntiqi", "Lending & Staking"], status: "mid" },
+            { title: "Frontend & Web3 İnteqrasiyası", items: ["Wallet Connect", "Kontraktlarla əlaqə", "ABI istifadəsi", "The Graph"], status: "advanced" },
+            { title: "Layer 2 & Miqyaslanma", items: ["Rollups (ZK vs Optimistic)", "Sidechains (Polygon)", "Körpülər (Bridges)", "L2 Optimizasiyası"], status: "advanced" },
+            { title: "İrəli Səviyyə & Təhlükəsizlik", items: ["Smart Kontrakt Audit", "Flash Loans", "Proxy Kontraktlar", "Reentrancy Attacks"], status: "expert" },
+            { title: "Gələcək Web3", items: ["Account Abstraction", "Zero Knowledge (ZK)", "DAO İdarəetməsi", "IPFS (Mərkəzsiz Yaddaş)"], status: "expert" }
+        ]
+    },
+
+    // 2. RESOURCES
+    resources: {
+        items: [
+            { type: 'youtube', title: 'EatTheBlocks', url: 'https://youtube.com/@EatTheBlocks', desc: 'Web3 developerlar üçün layihə əsaslı mükəmməl kanal.', lang: 'en' },
+            { type: 'youtube', title: 'Patrick Collins', url: 'https://youtube.com/@PatrickCollins', desc: 'Blockchain təhlükəsizliyi və Solidity üzrə dünyanın ən yaxşı kurslarının müəllifi.', lang: 'en' },
+            { type: 'course', title: 'CryptoZombies', url: 'https://cryptozombies.io', desc: 'Oyun oynayaraq Solidity öyrənmək üçün interaktiv platforma.', lang: 'global' },
+            { type: 'doc', title: 'Solidity Docs', url: 'https://docs.soliditylang.org', desc: 'Dilin rəsmi və ən detallı sənədləri.', lang: 'global' },
+            { type: 'tool', title: 'Alchemy / Infura', url: 'https://alchemy.com', desc: 'Blokçeyn düyünlərinə (node) qoşulmaq üçün ən populyar API provayderləri.', lang: 'global' },
+            { type: 'tool', title: 'OpenZeppelin', url: 'https://openzeppelin.com/contracts/', desc: 'Təhlükəsiz smart kontrakt kitabxanaları (ERC standardları).', lang: 'global' }
+        ]
+    },
+
+    // 3. JOBS & SALARY
+    jobs: {
+        TR: {
+            platforms: ["LinkedIn", "Web3.career", "RemoteOK"],
+            top_skills: ["Solidity", "Ethers.js", "React", "Rust (for Solana)", "Go"],
+            avg_salary: "Junior: 60k-90k TL | Mid: 100k-180k TL | Senior: 250k+ TL"
+        },
+        AZ: {
+            platforms: ["LinkedIn", "Remote jobs", "Crypto Startup Hubs"],
+            top_skills: ["Solidity", "Node.js", "Web3.js", "Cryptography", "DeFi Logic"],
+            avg_salary: "Junior: 1500-2500 AZN | Mid: 3500-6000 AZN | Senior: 8000+ AZN (Adətən Remote/Global)"
+        },
+        GLOBAL: {
+            platforms: ["Web3.career", "Crypto.jobs", "Gitcoin", "Toptal"],
+            top_skills: ["Solidity", "Rust", "Security Auditing", "ZK Proofs", "L2 Solutions"],
+            avg_salary: "Junior: $6k-$9k | Mid: $10k-$18k | Senior: $25k+ (Monthly/Remote)"
+        }
+    },
+
+    // 4. FAQ
+    faq: [
+        {
+            id: 1,
+            q: { tr: "Web3 öğrenmek için önce ne bilmeliyim?", az: "Web3 öyrənmək üçün əvvəlcə nə bilməliyəm?", en: "Prerequisites for Web3?" },
+            a: { tr: "Güçlü bir JavaScript temeli şarttır. Web3 frontend ile konuştuğu için JS ve React bilmek işinizi %70 kolaylaştırır.", az: "Güclü JavaScript biliyi mütləqdir. Web3-ün çox hissəsi JS və React ilə idarə olunur.", en: "A strong JavaScript foundation is key. Knowing JS and React makes learning Web3 70% easier." }
+        },
+        {
+            id: 2,
+            q: { tr: "Solidity mi Rust mı?", az: "Solidity yoxsa Rust?", en: "Solidity or Rust?" },
+            a: { tr: "Ethereum ekosistemi için Solidity; Solana, Polkadot veya Near için Rust. Başlangıç için Solidity daha çok kaynak ve iş imkanı sunar.", az: "Ethereum üçün Solidity; Solana üçün Rust. Başlanğıc üçün Solidity daha yaxşıdır.", en: "Solidity for Ethereum; Rust for Solana/Near. Solidity has more resources for beginners." }
+        }
+    ],
+
+    // 5. INTERVIEW PREP
+    interview: [
+        {
+            id: 1,
+            q: { tr: "Smart Contract nedir?", az: "Smart Kontrakt nədir?", en: "What is a Smart Contract?" },
+            a: { tr: "Blockchain üzerinde çalışan, belirli koşullar sağlandığında otomatik olarak yürütülen, değiştirilemez kod parçalarıdır.", az: "Blokçeyn üzərində işləyən, müəyyən şərtlər yerinə yetirildikdə avtomatik icra olunan, dəyişdirilə bilməyən kodlardır.", en: "Immutable pieces of code that execute automatically on the blockchain when conditions are met." }
+        },
+        {
+            id: 2,
+            q: { tr: "Gas Limit ve Gas Price farkı?", az: "Gas Limit və Gas Price fərqi?", en: "Gas Limit vs Gas Price?" },
+            a: { tr: "Gas Limit: İşlem için harcamaya hazır olduğunuz max enerji. Gas Price: Birim enerji için ödemek istediğiniz fiyat (Gwei).", az: "Gas Limit: Əməliyyat üçün maksimum enerji limiti. Gas Price: Enerji vahidi üçün ödəmək istədiyiniz qiymət.", en: "Gas Limit is the max units of gas you are willing to use. Gas Price is the cost per unit of gas (Gwei)." }
+        }
+    ],
+
+    // 6. PROJECT HUB
+    projects: [
+        {
+            id: 1,
+            level: "junior",
+            title: { tr: "NFT Minting Sitesi", az: "NFT Mint Saytı", en: "NFT Minting DApp" },
+            desc: { tr: "Kullanıcıların cüzdan bağlayıp kendi NFT'lerini üretebildiği bir platform.", az: "İstifadəçilərin pulqabı qoşaraq öz NFT-lərini yarada bildiyi platform.", en: "A platform where users connect wallets and mint their own NFTs." },
+            tech: ["Solidity", "ERC-721", "React", "Ethers.js"],
+            features: { tr: ["Cüzdan bağlantısı", "IPFS metadata", "Mint fonksiyonu"], az: ["Cüzdan qoşulması", "IPFS yaddaş", "Mint funksiyası"], en: ["Wallet connection", "IPFS metadata", "Mint function"] }
+        },
+        {
+            id: 2,
+            level: "mid",
+            title: { tr: "Kendi DEX'ini Yap", az: "Öz DEX-ini yarat", en: "Build your own DEX" },
+            desc: { tr: "Basit bir Uniswap klonu: Token takası ve likidite ekleme.", az: "Sadə Uniswap klonu: Token mübadiləsi və likvidlik əlavə etmək.", en: "Simple Uniswap clone: Token swap and liquidity pooling." },
+            tech: ["Solidity", "Automated Market Maker (AMM)", "Hardhat"],
+            features: { tr: ["Token Swap", "Liquidity Provider (LP) mantığı", "Price Oracle"], az: ["Token Swap", "Likvidlik təminatı", "Qiymət Oracle"], en: ["Token Swap", "Liquidity Provision", "Price Oracle"] }
+        }
+    ]
+};
+
+contentData['ar-vr'] = {
+    // 1. ROADMAP
+    roadmap: {
+        tr: [
+            { title: "Temel Kavramlar & Matematik", items: ["3D Koordinat Sistemleri", "Vektörler & Quaternionlar", "Lineer Cebir", "Render Pipeline Mantığı"], status: "start" },
+            { title: "Oyun Motoru Seçimi", items: ["Unity (C# - En Popüler)", "Unreal Engine (C++ - Yüksek Performans)", "Godot", "WebXR (A-Frame, Three.js)"], status: "start" },
+            { title: "C# veya C++ Geliştirme", items: ["Scripting Temelleri", "Object-Oriented Programming", "Memory Management", "Event System & Delegates"], status: "mid" },
+            { title: "Varlık (Asset) Yönetimi", items: ["3D Modeller (FBX, GLTF)", "PBR Materyaller & Textures", "Animations & Rigging", "Lighting & Post-Processing"], status: "mid" },
+            { title: "AR & VR SDK'ları", items: ["Meta Quest SDK (Oculus)", "ARCore (Android) & ARKit (iOS)", "Vuforia", "Unity XR Interaction Toolkit"], status: "mid" },
+            { title: "Etkileşim Tasarımı", items: ["Raycasting", "Grabbing & Throwing", "Locomotion (Teleport, Smooth Move)", "UI in World Space"], status: "mid" },
+            { title: "Optimizasyon & Performans", items: ["Draw Calls & Batching", "Occlusion Culling", "LOD (Level of Detail)", "Mobile vs PC VR Profiling"], status: "advanced" },
+            { title: "İleri Seviye Konular", items: ["Custom Shaders (HLSL/GLSL)", "Spatial Audio", "Hand Tracking & Eye Tracking", "Multiplayer XR (Photon/Mirror)"], status: "expert" },
+            { title: "Endüstriyel Uygulamalar", items: ["Digital Twins", "Telepresence", "Mixed Reality (Hololens/Magic Leap)", "Procedural Mesh Generation"], status: "expert" }
+        ],
+        az: [
+            { title: "Təməl Anlayışlar & Riyaziyyat", items: ["3D Koordinat Sistemləri", "Vektorlar & Kvaternionlar", "Xətti Cəbr", "Render Pipeline"], status: "start" },
+            { title: "Mühərrik Seçimi", items: ["Unity (C#)", "Unreal Engine (C++)", "WebXR (Three.js)", "Godot"], status: "start" },
+            { title: "C# və ya C++ İnkişafı", items: ["Scripting Əsasları", "OOP", "Memory Management", "Events & Delegates"], status: "mid" },
+            { title: "Asset İdarəetməsi", items: ["3D Modellər", "PBR Materiallar", "Animasiya & Rigging", "İşıqlandırma"], status: "mid" },
+            { title: "AR & VR SDK-lar", items: ["Meta Quest SDK", "ARCore & ARKit", "Vuforia", "XR Interaction Toolkit"], status: "mid" },
+            { title: "İnteraksiya Dizaynı", items: ["Raycasting", "Tutma & Atma", "Teleportasiya", "World Space UI"], status: "mid" },
+            { title: "Optimizasiya", items: ["Draw Calls", "Occlusion Culling", "LOD (Level of Detail)", "Profiling"], status: "advanced" },
+            { title: "İrəli Səviyyə Mövzular", items: ["Custom Shaders", "Spatial Audio (Məkan Səsi)", "Hand Tracking", "Multiplayer XR"], status: "expert" },
+            { title: "Sənaye Tətbiqləri", items: ["Digital Twins", "Telepresence", "Mixed Reality (MR)", "Procedural Mesh Generation"], status: "expert" }
+        ]
+    },
+
+    // 2. RESOURCES
+    resources: {
+        items: [
+            { type: 'youtube', title: 'Valem', url: 'https://youtube.com/@ValemVR', desc: 'VR geliştirme için en popüler başlangıç ve orta seviye eğitimleri.', lang: 'en' },
+            { type: 'youtube', title: 'Dilmer Valecillos', url: 'https://youtube.com/@DilmerV', desc: 'AR, MR ve ileri seviye XR teknolojileri üzerine uzmanlaşmış kanal.', lang: 'en' },
+            { type: 'youtube', title: 'Brackets', url: 'https://youtube.com/@Brackeys', desc: 'Unity ve C# temelleri için artık efsaneleşmiş bir kaynak.', lang: 'en' },
+            { type: 'doc', title: 'Unity Learn', url: 'https://learn.unity.com', desc: 'Unity tarafından sunulan resmi ve ücretsiz öğrenme yolları.', lang: 'global' },
+            { type: 'doc', title: 'Meta Quest Dev Docs', url: 'https://developer.oculus.com/documentation/', desc: 'Quest cihazları için en güncel dokümantasyon.', lang: 'global' },
+            { type: 'tool', title: 'Blender', url: 'https://www.blender.org', desc: 'Kendi 3D modellerinizi oluşturmak için ücretsiz ve güçlü araç.', lang: 'global' },
+            { type: 'tool', title: 'Mixamo', url: 'https://www.mixamo.com', desc: 'Hazır karakter animasyonları için Adobe altyapılı ücretsiz kütüphane.', lang: 'global' }
+        ]
+    },
+
+    // 3. JOBS & SALARY
+    jobs: {
+        TR: {
+            platforms: ["LinkedIn", "Gaming In Turkey", "Kariyer.net"],
+            top_skills: ["Unity", "C#", "ARCore/ARKit", "Shader Graph", "3D Math"],
+            avg_salary: "Junior: 40k-55k TL | Mid: 70k-110k TL | Senior: 140k+ TL"
+        },
+        AZ: {
+            platforms: ["HelloJob.az", "LinkedIn", "Technest"],
+            top_skills: ["Unity/Unreal Engine", "C#", "3D Modeling Knowledge", "Mobile AR"],
+            avg_salary: "Junior: 900-1400 AZN | Mid: 1800-3000 AZN | Senior: 4500+ AZN"
+        },
+        GLOBAL: {
+            platforms: ["XR Jobs Board", "LinkedIn", "Upwork (Freelance)"],
+            top_skills: ["C++", "C#", "Computer Vision", "Real-time Rendering", "Simulations"],
+            avg_salary: "Junior: $5k-$8k | Mid: $9k-$14k | Senior: $16k+ (Monthly/Remote)"
+        }
+    },
+
+    // 4. FAQ
+    faq: [
+        {
+            id: 1,
+            q: { tr: "Pahalı bir VR gözlüğüm olmadan başlayabilir miyim?", az: "Baha VR eynəyim olmadan başlaya bilərəm?", en: "Can I start without an expensive VR headset?" },
+            a: { tr: "Evet. Unity'deki simülatörleri kullanabilir veya sadece AR (mobil telefon) üzerine çalışarak başlayabilirsiniz.", az: "Bəli. Unity simulyatorları və ya mobil AR (telefon) ilə başlaya bilərsiniz.", en: "Yes. You can use simulators in Unity or start with mobile AR using your phone." }
+        },
+        {
+            id: 2,
+            q: { tr: "Matematik çok önemli mi?", az: "Riyaziyyat çox vacibdir?", en: "Is math very important?" },
+            a: { tr: "Basit projeler için hayır, ancak ileri seviye mekanikler ve optimizasyon için Vektör matematiği ve Trigonometri şarttır.", az: "Sadə layihələr üçün yox, amma irəli səviyyə mexanikalar üçün Vektor riyaziyyatı şərtdir.", en: "Not for simple apps, but essential for advanced mechanics and optimization." }
+        }
+    ],
+
+    // 5. INTERVIEW PREP
+    interview: [
+        {
+            id: 1,
+            q: { tr: "Draw Call nedir ve neden azaltılmalıdır?", az: "Draw Call nədir?", en: "What is a Draw Call?" },
+            a: { tr: "CPU'nun GPU'ya bir nesneyi çizmesi için gönderdiği komuttur. Çok fazla draw call performansı düşürür, bu yüzden 'batching' yapılır.", az: "CPU-nun GPU-ya obyekt çəkmək üçün göndərdiyi əmrdir. Çox olması performansı aşağı salır.", en: "A command sent by CPU to GPU to render an object. High counts drop performance; 'batching' is used to optimize." }
+        },
+        {
+            id: 2,
+            q: { tr: "ARCore ve ARKit arasındaki temel fark?", az: "ARCore və ARKit fərqi?", en: "Difference between ARCore and ARKit?" },
+            a: { tr: "ARCore Google (Android) tarafındandır, ARKit ise Apple (iOS) tarafındandır. Çalışma mantıkları benzerdir (SLAM teknolojisi).", az: "ARCore Google (Android), ARKit isə Apple (iOS) tərəfindən yaradılıb. Məntiqləri bənzərdir.", en: "ARCore is by Google (Android), ARKit is by Apple (iOS). Both use SLAM technology." }
+        }
+    ],
+
+    // 6. PROJECT HUB
+    projects: [
+        {
+            id: 1,
+            level: "junior",
+            title: { tr: "AR Mobilya Yerleştirme", az: "AR Mebel Yerləşdirmə", en: "AR Furniture Placement" },
+            desc: { tr: "Telefon kamerasıyla gerçek odaya 3D mobilya modelleri koyma uygulaması.", az: "Telefon kamerası ilə otağa 3D mebel modelləri qoymaq tətbiqi.", en: "An app to place 3D furniture models in a real room using the phone camera." },
+            tech: ["Unity", "AR Foundation", "C#"],
+            features: { tr: ["Yüzey algılama", "Obje döndürme", "Işık tahmini"], az: ["Səth aşkarlama", "Obyekt fırlatma", "İşıq təxmini"], en: ["Plane detection", "Object rotation", "Light estimation"] }
+        },
+        {
+            id: 2,
+            level: "mid",
+            title: { tr: "VR Atış Poligonu", az: "VR Atış Poliqonu", en: "VR Shooting Range" },
+            desc: { tr: "Fizik tabanlı silah etkileşimleri içeren bir VR deneyimi.", az: "Fizika əsaslı silah interaksiyaları olan VR təcrübəsi.", en: "A VR experience with physics-based weapon interactions." },
+            tech: ["Meta Quest SDK", "XR Interaction Toolkit", "C#"],
+            features: { tr: ["Geri tepme fiziği", "Şarjör değiştirme", "Hedef sistemi"], az: ["Təpmə fizikası", "Daraq dəyişmə", "Hədəf sistemi"], en: ["Recoil physics", "Reloading", "Target system"] }
+        },
+        {
+            id: 3,
+            level: "expert",
+            title: { tr: "Çok Oyunculu MR Eğitim Simülasyonu", az: "Multiplayer MR Təlim Simulyasiyası", en: "Multiplayer MR Training Simulation" },
+            desc: { tr: "Birden fazla kullanıcının aynı fiziksel ortamda sanal nesnelerle çalıştığı sistem.", az: "Bir neçə istifadəçinin eyni mühitdə virtual obyektlərlə işlədiyi sistem.", en: "A system where multiple users work with virtual objects in the same physical space." },
+            tech: ["Photon Fusion / Mirror", "Mixed Reality Toolkit (MRTK)", "Spatial Anchors"],
+            features: { tr: ["Shared Spatial Anchors", "Real-time senkronizasyon", "Sesli iletişim"], az: ["Məkan sinxronizasiyası", "Real-time data", "Səsli rabitə"], en: ["Shared Spatial Anchors", "Real-time sync", "Voice chat"] }
+        }
+    ]
+};
+
+contentData['qa-automation'] = {
+    // 1. ROADMAP
+    roadmap: {
+        tr: [
+            { title: "Test Temelleri", items: ["SDLC & STLC", "Bug Life Cycle", "Test Case Yazımı", "Kara Kutu & Beyaz Kutu Testi"], status: "start" },
+            { title: "Programlama Dili", items: ["Java (En Yaygın)", "Python (Hızlı & Popüler)", "JavaScript/TypeScript (Modern Web)", "C#"], status: "start" },
+            { title: "Web Otomasyonu", items: ["Selenium WebDriver", "Playwright (Modern & Hızlı)", "Cypress", "Locator Stratejileri (XPath, CSS)"], status: "mid" },
+            { title: "API Testi", items: ["REST Assured (Java)", "Postman & Newman", "PyTest (Python)", "JSON & XML Doğrulama"], status: "mid" },
+            { title: "Test Framework Mimarisi", items: ["Page Object Model (POM)", "Data Driven Testing", "Behavior Driven Development (Cucumber/Gherkin)", "Keyword Driven"], status: "mid" },
+            { title: "Mobil Otomasyon", items: ["Appium (iOS & Android)", "Emulator & Simulator Yönetimi", "Mobile Gestures"], status: "advanced" },
+            { title: "CI/CD & DevOps", items: ["Jenkins / GitHub Actions", "Docker (Test Container)", "Reporting (Allure, Extent Reports)", "Selenium Grid / Selenoid"], status: "advanced" },
+            { title: "İleri Seviye Konular", items: ["Performance Testing (JMeter, K6)", "Security Testing Temelleri", "Visual Regression Testing", "Database Testing (SQL)"], status: "expert" },
+            { title: "Kod Kalitesi & Mimari", items: ["Clean Code for Testers", "Design Patterns in Automation", "Flaky Test Yönetimi", "Custom Framework Geliştirme"], status: "expert" }
+        ],
+        az: [
+            { title: "Test Əsasları", items: ["SDLC & STLC", "Bug Həyat Dövrü", "Test Case Dizaynı", "Test Plan Hazırlanması"], status: "start" },
+            { title: "Proqramlaşdırma", items: ["Java", "Python", "JavaScript", "OOP Prinsipləri"], status: "start" },
+            { title: "Veb Avtomatlaşdırma", items: ["Selenium WebDriver", "Playwright", "Cypress", "Element Locators"], status: "mid" },
+            { title: "API Testi", items: ["REST Assured", "Postman", "Request & Response Doğrulanması", "Swagger"], status: "mid" },
+            { title: "Test Arxitekturası", items: ["Page Object Model (POM)", "BDD (Cucumber)", "Data Driven Testing", "TestNG / JUnit"], status: "mid" },
+            { title: "Mobil Testlər", items: ["Appium", "Android & iOS Testləri", "Cloud Testing (BrowserStack)"], status: "advanced" },
+            { title: "DevOps & Hesabat", items: ["CI/CD İnteqrasiyası", "Docker", "Allure Report", "Jenkins"], status: "advanced" },
+            { title: "İrəli Səviyyə Mövzular", items: ["Performans Testi (JMeter)", "Yük Testləri", "SQL & DB Verifikasiyası", "Security Scans"], status: "expert" },
+            { title: "Kod Keyfiyyəti", items: ["Automation Design Patterns", "Custom Frameworks", "Parallel Execution", "Flaky Test Management"], status: "expert" }
+        ]
+    },
+
+    // 2. RESOURCES
+    resources: {
+        items: [
+            { type: 'youtube', title: 'SDET-QA Automation Techie', url: 'https://youtube.com/@sdetpavan', desc: 'Java, Selenium ve API testi üzerine dünyanın en kapsamlı kanallarından biri.', lang: 'en' },
+            { type: 'youtube', title: 'Test Automation University', url: 'https://testautomationu.applitools.com', desc: 'Ücretsiz, sertifikalı ve her dilde (Java, JS, Python) harika kurslar.', lang: 'en' },
+            { type: 'youtube', title: 'Naveen AutomationLabs', url: 'https://youtube.com/@NaveenAutomationLabs', desc: 'Pratik çözümler ve mülakat hazırlığı için mükemmel kaynak.', lang: 'en' },
+            { type: 'doc', title: 'Selenium Documentation', url: 'https://www.selenium.dev/documentation/', desc: 'Sektör standardı olan aracın resmi rehberi.', lang: 'global' },
+            { type: 'doc', title: 'Playwright.dev', url: 'https://playwright.dev', desc: 'Yeni nesil otomasyon aracının modern dokümantasyonu.', lang: 'global' },
+            { type: 'tool', title: 'Postman', url: 'https://www.postman.com', desc: 'API testleri için vazgeçilmez arayüz.', lang: 'global' },
+            { type: 'tool', title: 'JMeter', url: 'https://jmeter.apache.org', desc: 'Performans ve yük testleri için açık kaynaklı standart.', lang: 'global' }
+        ]
+    },
+
+    // 3. JOBS & SALARY
+    jobs: {
+        TR: {
+            platforms: ["LinkedIn", "Kariyer.net", "Peak Games / Trendyol Jobs"],
+            top_skills: ["Selenium", "Java/C#", "Appium", "API Testing", "CI/CD"],
+            avg_salary: "Junior: 45k-65k TL | Mid: 75k-115k TL | Senior: 150k+ TL"
+        },
+        AZ: {
+            platforms: ["HelloJob.az", "LinkedIn", "Banks (ABB, Kapital, Pasha)"],
+            top_skills: ["QA Principles", "Java/Python", "Selenium", "SQL", "Postman"],
+            avg_salary: "Junior: 1000-1600 AZN | Mid: 2000-3500 AZN | Senior: 4500+ AZN"
+        },
+        GLOBAL: {
+            platforms: ["LinkedIn", "Glassdoor", "Remote.co", "Dice"],
+            top_skills: ["Playwright", "TypeScript", "SDET Skills", "Performance Engineering", "AWS"],
+            avg_salary: "Junior: $4k-$6k | Mid: $7k-$11k | Senior: $13k+ (Monthly/Remote)"
+        }
+    },
+
+    // 4. FAQ
+    faq: [
+        {
+            id: 1,
+            q: { tr: "QA Automation için yazılım bilmek şart mı?", az: "QA Automation üçün proqramlaşdırma vacibdir?", en: "Is coding necessary for QA Automation?" },
+            a: { tr: "Evet. Manuel test temeli üzerine en az bir programlama dilinde (Java, Python vb.) yetkin olmanız gerekir.", az: "Bəli. Ən azı bir proqramlaşdırma dilini orta səviyyədə bilmək vacibdir.", en: "Yes. You need to be proficient in at least one programming language on top of manual testing basics." }
+        },
+        {
+            id: 2,
+            q: { tr: "SDET nedir?", az: "SDET nədir?", en: "What is SDET?" },
+            a: { tr: "Software Development Engineer in Test. Sadece test yapan değil, test araçlarını ve framework'leri kodlayan mühendistir.", az: "Həm test yazan, həm də test alətləri və framework-ləri hazırlayan mühəndis.", en: "Software Development Engineer in Test. An engineer who builds test tools and frameworks, not just running tests." }
+        }
+    ],
+
+    // 5. INTERVIEW PREP
+    interview: [
+        {
+            id: 1,
+            q: { tr: "Implicit Wait vs Explicit Wait?", az: "Implicit vs Explicit Wait fərqi?", en: "Implicit vs Explicit Wait?" },
+            a: { tr: "Implicit: Tüm elementler için genel bekleme süresi. Explicit: Belirli bir elementin belirli bir koşulu (görünürlük vb.) sağlaması için bekleme.", az: "Implicit bütün elementləri, Explicit isə konkret bir şərti (məs. düymənin görünməsi) gözləyir.", en: "Implicit is a global wait for all elements. Explicit is a conditional wait for a specific element." }
+        },
+        {
+            id: 2,
+            q: { tr: "Regression Testing nedir?", az: "Reqressiya testi nədir?", en: "What is Regression Testing?" },
+            a: { tr: "Yeni yapılan değişikliklerin mevcut özelliklerin bozulup bozulmadığını kontrol etmek için yapılan testlerdir.", az: "Yeni dəyişikliklərin köhnə işlək funksiyaları pozub-pozmadığını yoxlamaq üçün edilən test.", en: "Testing to ensure that new code changes haven't adversely affected existing features." }
+        }
+    ],
+
+    // 6. PROJECT HUB
+    projects: [
+        {
+            id: 1,
+            level: "junior",
+            title: { tr: "E-Ticaret UI Otomasyonu", az: "E-Ticarət UI Testi", en: "E-commerce UI Automation" },
+            desc: { tr: "Bir alışveriş sitesinde ürün arama, sepete ekleme ve ödeme adımlarının otomatik testi.", az: "Məhsul axtarışı, səbətə əlavə və ödəniş addımlarının avtomatlaşdırılması.", en: "Automating product search, add to cart, and checkout flow on a web site." },
+            tech: ["Selenium", "Java/JUnit", "Maven"],
+            features: { tr: ["Form doldurma", "Assertion (Doğrulama)", "Ekran görüntüsü alma"], az: ["Formların doldurulması", "Yoxlama nöqtələri", "Screenshot"], en: ["Form filling", "Assertions", "Screenshots on failure"] }
+        },
+        {
+            id: 2,
+            level: "mid",
+            title: { tr: "Hybrid API & UI Framework", az: "Hibrid Test Framework", en: "Hybrid API & UI Framework" },
+            desc: { tr: "Hem API üzerinden veri hazırlayan hem de UI üzerinden doğrulama yapan framework.", az: "Həm API, həm də UI səviyyəsində test edən sistem.", en: "A framework that handles data setup via API and verification via UI." },
+            tech: ["Playwright", "TypeScript", "Allure Reports", "Postman"],
+            features: { tr: ["Page Object Model", "API Chaining", "Parallel Execution"], az: ["POM arxitekturası", "Parallel testlər", "API zəncirləmə"], en: ["Page Object Model", "API Chaining", "Parallel Execution"] }
+        },
+        {
+            id: 3,
+            level: "expert",
+            title: { tr: "CI/CD Pipeline & Load Test", az: "CI/CD & Yük Testi Sistemi", en: "Full CI/CD & Load Testing" },
+            desc: { tr: "GitHub Actions ile her committe koşan ve JMeter ile performans ölçen sistem.", az: "Hər kod dəyişikliyində işləyən və performans ölçən tam avtomatlaşdırılmış boru xətti.", en: "Automated pipeline running on every commit with performance testing integrated." },
+            tech: ["Docker", "GitHub Actions", "JMeter", "Selenium Grid"],
+            features: { tr: ["Konteynerize testler", "Slack entegrasyonu", "Performance thresholds"], az: ["Dockerize testlər", "Avtomatik hesabat", "Performans limitləri"], en: ["Containerized tests", "Slack alerts", "Performance thresholds"] }
+        }
+    ]
+};
 // 3. GLOBAL FAQ DATA
 export const globalFaqData = [
     {
