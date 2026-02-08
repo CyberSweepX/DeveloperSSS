@@ -7602,7 +7602,7 @@ contentData['iot'] = {
     ]
 };
 
-contentData['web3'] = {
+contentData['blockchain'] = {
     // 1. ROADMAP
     roadmap: {
     tr: [
