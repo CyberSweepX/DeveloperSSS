@@ -7627,8 +7627,7 @@ contentData['web3'] = {
             { title: "İrəli Səviyyə & Təhlükəsizlik", items: ["Smart Kontrakt Audit", "Flash Loans", "Proxy Kontraktlar", "Reentrancy Attacks"], status: "expert" },
             { title: "Gələcək Web3", items: ["Account Abstraction", "Zero Knowledge (ZK)", "DAO İdarəetməsi", "IPFS (Mərkəzsiz Yaddaş)"], status: "expert" }
         ],
-        roadmap: {
-    en: [
+        en: [
         { title: "Blockchain Fundamentals", items: ["Cryptographic Hash Functions", "Public/Private Key (Asymmetric Encryption)", "P2P Networks", "Consensus Mechanisms (PoW, PoS, DPoS)"], status: "start" },
         { title: "Introduction to Web3", items: ["Wallet Logic (Metamask, Seed Phrase)", "Blockchain Explorers (Etherscan)", "Gas Fees & Transaction Logic", "Nodes (Full, Light, Archive)"], status: "start" },
         { title: "Smart Contract Development", items: ["Solidity (EVM Standard)", "Data Types & Functions", "Events & Errors", "Inheritance & Interfaces"], status: "mid" },
@@ -7638,8 +7637,7 @@ contentData['web3'] = {
         { title: "Layer 2 & Scaling", items: ["Rollups (Optimistic vs ZK)", "Sidechains (Polygon)", "Bridging Assets", "L2 Gas Optimization"], status: "advanced" },
         { title: "Advanced Security & Auditing", items: ["Reentrancy Attacks", "Flash Loans", "Upgradable Contracts (Proxy)", "Formal Verification"], status: "expert" },
         { title: "Next-Gen Web3", items: ["Account Abstraction (ERC-4337)", "Zero Knowledge Proofs (ZKP)", "DAO Governance", "IPFS & Arweave (Storage)"], status: "expert" }
-    ]
-}
+        ],
     },
 
     // 2. RESOURCES
